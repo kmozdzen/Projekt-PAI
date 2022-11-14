@@ -3,14 +3,10 @@ body
     font-family: sans-serif;
     font-style: normal;
     font-weight: 600;
-
-    position: fixed;
-    top: 0;
-    left: 0;
     margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
+
+   overflow: hidden;
+
 }
 
 span
@@ -20,13 +16,14 @@ span
 
 .container
 {
-    background: transparent linear-gradient(180deg, #00FF00 0%, #006600 100%) 0% 0% no-repeat padding-box;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(180deg, #00FF00 0%, #006600 100%);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    height: inherit;
 }
 
 img
@@ -54,7 +51,7 @@ form.login
 }
 
 
-.logibn>button
+.login>button
 {
     border: 3px solid #000000;
     border-radius: 30px;
@@ -66,10 +63,6 @@ form.login
     padding: 0.5em;
 }
 
-.sign-in
-{
-    margin-top: 10%;
-}
 
 .login-container>form>input
 {
@@ -93,6 +86,11 @@ form.login
 p
 {
     font-size: 120%;
+}
+
+.sign-in
+{
+    margin-top: 2em;
 }
 
 @media only screen and (max-device-width: 420px)
@@ -124,13 +122,17 @@ p
     }
 } 
 
-.search-container
+.base-container
 {
+    background: linear-gradient(180deg, #00FF00 0%, #006600 100%);
+    position: fixed;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     height: 100vh;
 }
+
 
 nav
 {
@@ -142,6 +144,9 @@ nav
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    border-left: none;
+
+    margin-top: 4em;
 }
 
 nav > img
@@ -153,7 +158,7 @@ nav > img
 a
 {
     text-decoration: none;
-    display: inline-block;
+    display: block;
 }
 
 li i
@@ -167,13 +172,13 @@ li i
     border-radius: 30px;
 
     color: black;
-    margin-left: 5vw;
-    margin-right: 5vw;
+    margin-left: 5em;
+    margin-right: 5em;
     text-align: center;
     letter-spacing: 0.7px;
     padding: 0.9em;
   
-    width: 50%;
+    width: 40%;
 }
 
 .setting-button

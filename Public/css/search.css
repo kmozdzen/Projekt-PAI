@@ -12,7 +12,7 @@ main
 .search-container > *
 {
     grid-column-start: 1;
-    grid-row-start: 1;
+    grid-row-start: 2;
 }
 
 .search-container>input
