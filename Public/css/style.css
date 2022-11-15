@@ -5,8 +5,7 @@ body
     font-weight: 600;
     margin: 0;
 
-   overflow: hidden;
-
+    overflow: hidden;
 }
 
 span
@@ -125,19 +124,23 @@ p
 .base-container
 {
     background: linear-gradient(180deg, #00FF00 0%, #006600 100%);
-    position: fixed;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     height: 100vh;
+
+    overflow: auto;
 }
 
 
 nav
 {
+    position: fixed;
+    top: 3em;
+    left: 0;
+
     width: 100vw;
-    height: 15%;
     background: #017801;
     border: 3px solid #000000;
 
@@ -145,8 +148,6 @@ nav
     align-items: center;
     justify-content: flex-start;
     border-left: none;
-
-    margin-top: 4em;
 }
 
 nav > img
@@ -187,7 +188,7 @@ li i
     margin-left: 5vw;
 }
 
-ul
+nav > ul
 {
     list-style: none;
     display: flex;
