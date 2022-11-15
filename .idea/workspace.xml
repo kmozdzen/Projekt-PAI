@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c860e711-a967-49d5-961d-4e13d6f3c792" name="Changes" comment="added User" />
+    <list default="true" id="c860e711-a967-49d5-961d-4e13d6f3c792" name="Changes" comment="added User">
+      <change afterPath="$PROJECT_DIR$/src/controllers/SecurityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Routing.php" beforeDir="false" afterPath="$PROJECT_DIR$/Routing.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Views/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/Views/search.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/AppController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/AppController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/User.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,6 +52,7 @@
       <workItem from="1668449117102" duration="2006000" />
       <workItem from="1668506972004" duration="265000" />
       <workItem from="1668507240964" duration="467000" />
+      <workItem from="1668507733202" duration="4912000" />
     </task>
     <task id="LOCAL-00001" summary="added User">
       <created>1668507390303</created>
@@ -50,7 +61,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668507390303</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="added User">
+      <created>1668508058896</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1668508058896</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -10,12 +10,22 @@
                 <img src="Public/img/logo.svg" alt="logo">
             </div>
             <div class="login-container">
-                <form class="login">
+                <form class="login" action="login" method="POST">
+                    <div class="messages">
+                        <?php
+                        if(isset($messages)){
+                            foreach($messages as $message) {
+                                echo $message;
+                            }
+                        }
+                        ?>
+                    </div>
+
                     <p class="input-names">Email</p>
                     <input name="email" type="text" placeholder="email@email.com">
                     <p class="input-names">Password</p>
-                    <input name="passwod" type="password" placeholder="password">
-                    <button class="sign-in"><span>Sign in</span></button>
+                    <input name="password" type="password" placeholder="password">
+                    <button class="sign-in" type="submit"><span>Sign in</span></button>
                     <button><span>Register</span></button>
                 </form>
             </div>
