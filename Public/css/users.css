@@ -1,0 +1,314 @@
+main
+{
+    position: relative;
+    top: 20vh;
+}
+
+.user-container
+{
+    width: 100%;
+    min-width: 50vw;
+    background: #7FFF7F;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+}
+
+.user-container> .typing-place > input
+{
+    background: none;
+    border: none;
+    padding: 2.5em;
+
+    width: 100%;
+    height: 4vh;
+
+}
+
+.user-container>.icons>button
+{
+    background: none;
+    border: none;
+
+    font-size: 1.5em;
+}
+
+.user-container>.icons>button>:active {
+    background-color: white;
+   }
+
+.user-container>.icons
+{
+    margin: auto;
+    margin-right: 2em;
+
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+}
+
+.icons > hr
+{
+    border: 1px solid black;
+    height: 6vh;
+    margin-left: 1em;
+    margin-right: 1em;
+
+}
+
+section
+{
+    margin-top: 8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.user
+{
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+    color: white;
+    padding: 1em;
+}
+
+.user > i
+{
+    color: red;
+    margin: auto;
+    margin-right: 0;
+    font-size: 2.5em;
+}
+
+#user-name
+{
+    margin-left: 2em;
+}
+
+#likes
+{
+    font-size: 2em;
+    margin: auto;
+    margin-left: 0.5em;
+    margin-right: 2em;
+}
+
+.best-games
+{
+    margin-top: 3%;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+
+
+}
+
+.best-games > h2
+{
+    font-size: 2em;
+    color: white;
+}
+
+
+.best-games > ul
+{
+    list-style: none;
+
+    display: grid;
+    gap: 1em;
+
+    margin-right: 1em;
+
+}
+
+.best-games > ul > li
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    text-align: center;
+}
+
+.l_position
+{
+    display: flex;
+    justify-content: flex-start;
+    text-align: center;
+}
+
+.block
+{
+    width: auto;
+    min-width: 40vw;
+    background: rgba(10, 0, 0, 0.78);
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: flex-start;
+    text-align: center;
+
+    color: white;
+}
+
+.number
+{
+    color: white;
+
+    width: 4em;
+    height: 4em;
+    border-radius: 50%;
+
+    border: 3px solid #FFFFFF;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    margin: auto;
+    margin-right: 1em;
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.number > p
+{
+    font-size: 2.5em;
+    width: 100vw;
+    text-align: center;
+
+}
+
+.block > img
+{
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+   
+    border-radius: 10px;
+}
+
+.game-name
+{
+    border: 3px solid #FFFFFF;
+    border-radius: 50px;
+
+    width: 50%;
+    margin: auto;
+    margin-left: 4em;
+    padding: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+
+    font-size: 1em;
+    text-overflow: ellipsis; 
+    overflow: hidden; 
+    white-space: nowrap;
+}
+
+.rate
+{
+    font-size: 4em;
+    margin: auto 1em;
+    text-align: left;
+}
+
+@media only screen and (max-device-width: 420px)
+{
+
+
+
+
+    /*end nav*/
+
+    #likes
+    {
+        font-size: 1.5em;
+        margin-right: 0.2em;
+    }
+
+    .user
+    {
+        border-radius: 20px;
+    }
+
+    .user > i
+    {
+        font-size: 2em;
+    }
+
+    #user-name
+    {
+        margin-left: 0.5em;
+    }
+
+    .user-container
+    {
+        border-radius: 40px;
+        width: 100%;
+        min-width: 50vw;
+    }
+
+    .user-container>.icons
+    {
+        margin-right: 5%;
+    } 
+
+    .user-container > .icons > button > i
+    {
+        font-size: 1.5em;
+    }
+
+    .block
+    {
+        width: 70vw;
+    }
+
+    .best-games > h2
+    {
+        font-size: 1.5em;
+    
+    }
+
+    .number
+    {
+        width: 2em;
+        height: 2em;
+    }
+
+    .number > p
+    {
+        font-size: 1.5em;
+     
+    }
+
+    .rate
+    {
+        font-size: 1.5em;
+    }
+    
+    .game-name
+    {
+        font-size: 0.6em;
+    }
+
+    .block > img
+    {
+        width: 10vw;
+        margin: auto;
+        object-fit: cover;
+        /* object-fit: contain; */
+       
+        border-radius: 10px;
+    }
+
+   
+}
+
