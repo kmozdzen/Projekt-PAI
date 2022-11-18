@@ -1,6 +1,7 @@
 main
 {
-    margin-top: 10%;
+    position: relative;
+    top: 20vh;
     width: 100vw;
 }
 
@@ -73,4 +74,48 @@ hr
     font-size: 2em;
     margin: auto;
     color: red;
+}
+
+@media only screen and (max-device-width: 420px)
+{
+    main
+    {
+        top: 10vh;
+    }
+
+    main > ul
+    {
+        text-align: center;
+        list-style-position: inside;
+    }
+
+    .stats
+    {
+        border-radius: 30px;
+        width: 80vw;
+        margin-top: 10%;
+        margin-left: 6%;
+    }
+
+    main > ul > li:last-child
+    {
+        margin-top: 15%;
+    }
+
+    h1
+    {
+        margin-top: 0.4em;
+        margin-bottom: 0.3em;
+    }
+
+    .likes-name > i
+    {
+        font-size: 1.5em;
+    }
+
+    #all-games, #average, #hours, #likes
+    {
+        font-size: 1.5em;
+        margin: 0.6em auto;
+    }
 }

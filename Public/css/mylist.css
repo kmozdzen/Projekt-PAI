@@ -114,3 +114,59 @@ main
     margin-left: 1em;
     text-align: left;
 }
+
+@media only screen and (max-device-width: 420px)
+{
+
+    main
+    {
+        margin-top: 18%;
+    }
+
+    .my_list
+    {
+        font-size: 3em;
+    }
+
+    .list > ul
+    {
+        gap: 2em;
+    }
+
+    .block
+    {
+        width: 70vw;
+        border-radius: 30px;
+    }
+
+    .number
+    {
+        width: 3em;
+        height: 3em;
+    }
+
+    .number > p
+    {
+        font-size: 2em;
+    }
+
+    .block > img
+    {
+        width: 15vw;
+        margin: auto;
+        object-fit: cover;
+        border-radius: 30px;
+    }
+
+    .game-name
+    {
+        width: 50%;
+        font-size: 0.6em;
+    }
+
+    .rate
+    {
+        font-size: 2.5em;
+        margin: auto 0.5em;
+    }
+}

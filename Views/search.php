@@ -9,7 +9,14 @@
     <body>
         <div class="base-container">
             <nav>
-                <img src="Public/img/logo.svg">
+                <div class="hider">
+                    
+                </div>
+                <div class="strap">
+                    <div class="list-icon">
+                        <i class="fa-solid fa-list"></i>
+                    </div>
+                    <img src="Public/img/logo.svg">
                 <ul>
                     <li>
                         <a href="#" class="button">Add game</a>
@@ -27,6 +34,7 @@
                         <a href="#" class="setting-button"><i class="fa-solid fa-gear"></i></a>
                     </li>
                 </ul>
+                </div>
             </nav>
             <main>
                 <header>
@@ -34,6 +42,7 @@
                         <input placeholder="Search for games">
                         <div class="icons">
                             <button><i class="fa-solid fa-xmark"></i></button>
+                            <hr/>
                             <button><i class="fa-solid fa-plus"></i></button>
                         </div>    
                     </div>
@@ -44,7 +53,9 @@
                         <h1 id="found-game">The Witcher: Wild Hunt</h1>
                     </div>
                     <div id="add">
-                        add
+                        <p id="rating">Rating : 5</p>
+                        <p id="hours-played">Hours played: 192</p>
+                        <i class="fa-solid fa-circle-plus"></i>
                     </div>                   
                 </section>
             </main>
