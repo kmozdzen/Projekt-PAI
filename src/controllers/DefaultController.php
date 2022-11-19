@@ -12,4 +12,19 @@ class DefaultController extends AppController{
     {
         $this->render('search');
     }
+
+    public function mylist()
+    {
+        $this->render('mylist');
+    }
+
+    public function statistics()
+    {
+        $this->render('statistics');
+    }
+
+    public function users()
+    {
+        $this->render('users');
+    }
 }

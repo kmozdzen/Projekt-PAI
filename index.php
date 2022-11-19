@@ -9,4 +9,8 @@ Routing::get('', 'DefaultController');
 Routing::get('search', 'DefaultController');
 Routing::post('login', 'SecurityController');
 
+Routing::get('mylist', 'DefaultController');
+Routing::get('statistics', 'DefaultController');
+Routing::get('users', 'DefaultController');
+
 Routing::run($path);

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="../Public/css/style.css"/>
-        <link rel="stylesheet" type="text/css" href="../Public/css/statistics.css"/>
+        <link rel="stylesheet" type="text/css" href="Public/css/style.css"/>
+        <link rel="stylesheet" type="text/css" href="Public/css/statistics.css"/>
         <title>YourGameBook</title>
         <script src="https://kit.fontawesome.com/3ff5952e8a.js" crossorigin="anonymous"></script>
     </head>
@@ -16,19 +16,19 @@
                     <div class="list-icon">
                         <i class="fa-solid fa-list"></i>
                     </div>
-                    <img src="../Public/img/logo.svg">
+                    <img src="Public/img/logo.svg">
                 <ul>
                     <li>
-                        <a href="#" class="button">Add game</a>
+                        <a href="search" class="button">Add game</a>
                     </li>
                     <li>
-                        <a href="#" class="button">My list</a>
+                        <a href="mylist" class="button">My list</a>
                     </li>
                     <li>
-                        <a href="#" class="button">Statistics</a>
+                        <a href="statistics" class="button">Statistics</a>
                     </li>
                     <li>
-                        <a href="#" class="button">Users</a>
+                        <a href="users" class="button">Users</a>
                     </li>
                     <li>
                         <a href="#" class="setting-button"><i class="fa-solid fa-gear"></i></a>
