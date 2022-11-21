@@ -39,7 +39,14 @@
             <main>
                 <header>
                     <div class="search-container">
-                        <input placeholder="Search for games">
+                        <form name="search_for_games" method="post">
+                            <input placeholder="Search for games" list="scripts" size=10>
+                            <datalist id="scripts">
+                                <option value="siema">
+                                <option value="elo">
+                                <option value="witam">
+                            </datalist>
+                        </form>
                         <div class="icons">
                             <button><i class="fa-solid fa-xmark"></i></button>
                             <hr/>
@@ -50,11 +57,11 @@
                 <section class="add-game">
                     <div id="game">
                         <img src="Public/img/game.webp">
-                        <h1 id="found-game">The Witcher: Wild Hunt</h1>
+                        <h1 id="found-game">Game</h1>
                     </div>
                     <div id="add">
-                        <p id="rating">Rating : 5</p>
-                        <p id="hours-played">Hours played: 192</p>
+                        <p id="rating">Rating: -</p>
+                        <p id="hours-played">Hours played: -</p>
                         <i class="fa-solid fa-circle-plus"></i>
                     </div>                   
                 </section>

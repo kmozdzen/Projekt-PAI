@@ -2,19 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c860e711-a967-49d5-961d-4e13d6f3c792" name="Changes" comment="AppController, SecurityController changes">
-      <change afterPath="$PROJECT_DIR$/Database.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/repository/Repository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/repository/UserRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controllers/MylistController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/Game.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/repository/MylistRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/mylist.html" beforeDir="false" afterPath="$PROJECT_DIR$/Views/mylist.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Public/css/search.css" beforeDir="false" afterPath="$PROJECT_DIR$/Public/css/search.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/search.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/search.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/statistics.html" beforeDir="false" afterPath="$PROJECT_DIR$/Views/statistics.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/Views/users.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/php/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/docker/php/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/DefaultController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/SecurityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/User.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +35,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "import_schema_mapping": "<schema-mapping>\n  <databases>\n    <list>\n      <schema-mapping-item>\n        <source-data-source-id>564f32e9-b37a-4608-901b-c1a955092e8a</source-data-source-id>\n        <source-path>database/&quot;postgres&quot;/schema/&quot;schema&quot;</source-path>\n        <target-data-source-id>564f32e9-b37a-4608-901b-c1a955092e8a</target-data-source-id>\n        <target-path>database/&quot;postgres&quot;/schema/&quot;public&quot;</target-path>\n      </schema-mapping-item>\n    </list>\n  </databases>\n</schema-mapping>",
-    "last_opened_file_path": "C:/Users/PC/Desktop/Projekt Games App/Project/GameBook",
+    "last_opened_file_path": "C:/Users/PC/Desktop/Projekt Games App/Project/GameBook/src/repository",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   },
@@ -51,6 +45,11 @@
     ]
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\PC\Desktop\Projekt Games App\Project\GameBook\src\repository" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -64,7 +63,8 @@
       <workItem from="1668507240964" duration="467000" />
       <workItem from="1668507733202" duration="5676000" />
       <workItem from="1668784825039" duration="4871000" />
-      <workItem from="1668873621617" duration="4276000" />
+      <workItem from="1668873621617" duration="4722000" />
+      <workItem from="1669048960893" duration="8376000" />
     </task>
     <task id="LOCAL-00001" summary="added User">
       <created>1668507390303</created>
