@@ -11,7 +11,13 @@ class MylistController extends AppController
     public function __construct()
     {
         parent::__construct();
-        $this->$mylistRepository = new MylistRepository();
+        $this->mylistRepository = new MylistRepository();
+    }
+
+    public function mylist()
+    {
+        $my_list = $this->mylistRepository->getGames();
+        $this->render('mylist', ['my_list' => $my_list]);
     }
 
     public function addGame()

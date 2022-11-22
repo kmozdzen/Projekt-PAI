@@ -66,10 +66,10 @@ form.login
 {
     background: #7FFF7F;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
     border-radius: 20px;
 
     width: 40%;
-    border: none;
     margin: 1%;
     padding: 2.5em;
 
@@ -272,4 +272,10 @@ li a:hover:not(.active)
         margin-left: 0.5em;
     }
 
-} 
+}
+.no-valid
+{
+    border: 4px solid red;
+    box-shadow: 0 0 0.2em red;
+    outline: none;
+}

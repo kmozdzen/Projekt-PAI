@@ -3,7 +3,7 @@
 require_once 'Repository.php';
 require_once __DIR__ . '/../models/Game.php';
 
-class MylistRepository extends Repository
+class GamesRepository extends Repository
 {
 
     public function getGame(string $id): ?Game
@@ -21,24 +21,8 @@ class MylistRepository extends Repository
         }
 
         return new Game(
-            $game['rating'],
-            $game['hours_played'],
+            $game['title']
         );
-    }
-
-    public function addGame(Game $game): void
-    {
-        $date = new DateTime();
-        $stmt = $this->database->connect()->prepare('
-            INSERT INTO my_list (rating, hours_played, added_at)
-            VALUES (?, ?, ?)
-        ');
-
-        $stmt->execute([
-            $game->getRating(),
-            $game->getHoursPlayed(),
-            $date->format('Y-m-d'),
-        ]);
     }
 
     public function getGames(): array
@@ -46,15 +30,14 @@ class MylistRepository extends Repository
         $result = [];
 
         $stmt = $this->database->connect()->prepare('
-            SELECT * FROM my_list
+            SELECT * FROM games
         ');
         $stmt->execute();
-        $my_list = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $games = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        foreach ($my_list as $game){
+        foreach ($games as $game){
             $result[] = new Game(
-                $game['rating'],
-                $game['hours_played']
+                $game['title']
             );
         }
 

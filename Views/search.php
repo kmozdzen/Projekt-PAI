@@ -40,11 +40,11 @@
                 <header>
                     <div class="search-container">
                         <form name="search_for_games" method="post">
-                            <input placeholder="Search for games" list="scripts" size=10>
+                            <input type="text" placeholder="Search for games" list="scripts">
                             <datalist id="scripts">
-                                <option value="siema">
-                                <option value="elo">
-                                <option value="witam">
+                                <?php foreach ($games as $game): ?>
+                                    <option><?= $game->getTitle(); ?></option>
+                                <?php endforeach; ?>
                             </datalist>
                         </form>
                         <div class="icons">
@@ -57,7 +57,9 @@
                 <section class="add-game">
                     <div id="game">
                         <img src="Public/img/game.webp">
-                        <h1 id="found-game">Game</h1>
+                        <h1 id="found-game">
+                            Game
+                        </h1>
                     </div>
                     <div id="add">
                         <p id="rating">Rating: -</p>

@@ -42,54 +42,20 @@
                 </div>
                 <div class="list">
                     <ul>
-                        <li>
-                            <div class="l_position">
-                                <div class="number">
-                                    <p>1</p>
+                        <?php foreach ($my_list as $game): ?>
+                            <li>
+                                <div class="l_position">
+                                    <div class="number">
+                                        <p>1</p>
+                                    </div>
+                                    <div class="block">
+                                        <img src="Public/img/game.webp">
+                                        <p class="game-name">The Witcher: Wild Hunt</p>
+                                        <p class="rate"><?=$game->getRating();?></p>
+                                    </div>
                                 </div>
-                                <div class="block">
-                                    <img src="Public/img/game.webp">
-                                    <p class="game-name">The Witcher: Wild Hunt</p>
-                                    <p class="rate">10</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="l_position">
-                                <div class="number">
-                                    <p>2</p>
-                                </div>
-                                <div class="block">
-                                    <img src="Public/img/game.webp">
-                                    <p class="game-name">Grand Theft Auto: San Andrea</p>
-                                    <p class="rate">9</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="l_position">
-                                <div class="number">
-                                    <p>1</p>
-                                </div>
-                                <div class="block">
-                                    <img src="Public/img/game.webp">
-                                    <p class="game-name">The Witcher: Wild Hunt</p>
-                                    <p class="rate">10</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="l_position">
-                                <div class="number">
-                                    <p>2</p>
-                                </div>
-                                <div class="block">
-                                    <img src="Public/img/game.webp">
-                                    <p class="game-name">Grand Theft Auto: San Andrea</p>
-                                    <p class="rate">9</p>
-                                </div>
-                            </div>
-                        </li>
+                            </li>
+                        <?php endforeach; ?>
                     </ul>
                 </div>
             </main>

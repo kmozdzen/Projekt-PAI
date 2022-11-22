@@ -8,14 +8,9 @@ class DefaultController extends AppController{
         $this->render('login');
     }
 
-    public function search()
+    public function register()
     {
-        $this->render('search');
-    }
-
-    public function mylist()
-    {
-        $this->render('mylist');
+        $this->render('register');
     }
 
     public function statistics()
