@@ -43,4 +43,16 @@ class GamesRepository extends Repository
 
         return $result;
     }
+
+    public function getGameByTitle(string $searchString){
+
+        $stmt = $this->database->connect()->prepare('
+            SELECT game FROM games WHERE title LIKE :add
+        ');
+
+        $stmt->bindParam(':add', $searchString, PDO::PARAM_STR);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }

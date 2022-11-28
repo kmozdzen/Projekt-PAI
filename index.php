@@ -9,6 +9,7 @@ Routing::get('', 'DefaultController');
 Routing::get('search', 'GamesController');
 Routing::post('login', 'SecurityController');
 Routing::post('register', 'DefaultController');
+Routing::post('add', 'GamesController');
 
 Routing::get('mylist', 'MylistController');
 Routing::get('statistics', 'DefaultController');

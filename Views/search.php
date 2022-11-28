@@ -5,6 +5,7 @@
         <link rel="stylesheet" type="text/css" href="Public/css/search.css"/>
         <title>YourGameBook</title>
         <script src="https://kit.fontawesome.com/3ff5952e8a.js" crossorigin="anonymous"></script>
+        <script src="Public/js/add.js" type="text/javascript" defer></script>
     </head>
     <body>
         <div class="base-container">
@@ -39,27 +40,23 @@
             <main>
                 <header>
                     <div class="search-container">
-                        <form name="search_for_games" method="post">
-                            <input type="text" placeholder="Search for games" list="scripts">
-                            <datalist id="scripts">
-                                <?php foreach ($games as $game): ?>
-                                    <option><?= $game->getTitle(); ?></option>
-                                <?php endforeach; ?>
-                            </datalist>
-                        </form>
+                        <input type="text" placeholder="Search for games" list="scripts">
+                        <datalist id="scripts">
+                            <?php foreach ($games as $game): ?>
+                                <option><?= $game->getTitle(); ?></option>
+                            <?php endforeach; ?>
+                        </datalist>
                         <div class="icons">
                             <button><i class="fa-solid fa-xmark"></i></button>
                             <hr/>
-                            <button><i class="fa-solid fa-plus"></i></button>
+                            <button id="plus"><i class="fa-solid fa-plus"></i></button>
                         </div>    
                     </div>
                 </header>
                 <section class="add-game">
                     <div id="game">
                         <img src="Public/img/game.webp">
-                        <h1 id="found-game">
-                            Game
-                        </h1>
+                        <h1 id="found-game">Game</h1>
                     </div>
                     <div id="add">
                         <p id="rating">Rating: -</p>
