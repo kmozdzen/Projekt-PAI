@@ -6,11 +6,35 @@ class Game
     private $description;
     private $rating;
     private $hours_played;
+    private $id_games;
+    private $image;
 
 
-    public function __construct($title)
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    public function setImage($image): void
+    {
+        $this->image = $image;
+    }
+
+    public function getIdGames()
+    {
+        return $this->id_games;
+    }
+
+    public function setIdGames($id_games): void
+    {
+        $this->id_games = $id_games;
+    }
+
+
+    public function __construct($title, $rating)
     {
         $this->title = $title;
+        $this->rating = $rating;
     }
 
     public function getTitle()

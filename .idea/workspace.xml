@@ -2,13 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c860e711-a967-49d5-961d-4e13d6f3c792" name="Changes" comment="AppController, SecurityController changes">
-      <change afterPath="$PROJECT_DIR$/Public/js/add.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Public/img/elden_ring.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Public/img/forza5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Public/img/god_of_war.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Public/img/gta5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Public/img/heroes3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Public/img/red_dead_redemption_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Public/img/witcher3.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Public/css/mylist.css" beforeDir="false" afterPath="$PROJECT_DIR$/Public/css/mylist.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Public/css/search.css" beforeDir="false" afterPath="$PROJECT_DIR$/Public/css/search.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Public/js/add.js" beforeDir="false" afterPath="$PROJECT_DIR$/Public/js/add.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/mylist.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/mylist.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/search.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/search.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/GamesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/GamesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/MylistController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/MylistController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/Game.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Game.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/repository/GamesRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/GamesRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/MylistRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/MylistRepository.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,22 +47,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;import_schema_mapping&quot;: &quot;&lt;schema-mapping&gt;\n  &lt;databases&gt;\n    &lt;list&gt;\n      &lt;schema-mapping-item&gt;\n        &lt;source-data-source-id&gt;564f32e9-b37a-4608-901b-c1a955092e8a&lt;/source-data-source-id&gt;\n        &lt;source-path&gt;database/&amp;quot;postgres&amp;quot;/schema/&amp;quot;schema&amp;quot;&lt;/source-path&gt;\n        &lt;target-data-source-id&gt;564f32e9-b37a-4608-901b-c1a955092e8a&lt;/target-data-source-id&gt;\n        &lt;target-path&gt;database/&amp;quot;postgres&amp;quot;/schema/&amp;quot;public&amp;quot;&lt;/target-path&gt;\n      &lt;/schema-mapping-item&gt;\n    &lt;/list&gt;\n  &lt;/databases&gt;\n&lt;/schema-mapping&gt;&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/PC/Desktop/Projekt Games App/Project/GameBook/src/controllers&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "import_schema_mapping": "<schema-mapping>\n  <databases>\n    <list>\n      <schema-mapping-item>\n        <source-data-source-id>564f32e9-b37a-4608-901b-c1a955092e8a</source-data-source-id>\n        <source-path>database/&quot;postgres&quot;/schema/&quot;schema&quot;</source-path>\n        <target-data-source-id>564f32e9-b37a-4608-901b-c1a955092e8a</target-data-source-id>\n        <target-path>database/&quot;postgres&quot;/schema/&quot;public&quot;</target-path>\n      </schema-mapping-item>\n    </list>\n  </databases>\n</schema-mapping>",
+    "last_opened_file_path": "C:/Users/PC/Desktop/Projekt Games App/Project/GameBook/src/controllers",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\PC\Desktop\Projekt Games App\Project\GameBook\src\controllers" />

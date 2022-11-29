@@ -30,14 +30,17 @@ class GamesRepository extends Repository
         $result = [];
 
         $stmt = $this->database->connect()->prepare('
-            SELECT * FROM games
+            SELECT * FROM games WHERE added = false
         ');
         $stmt->execute();
         $games = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         foreach ($games as $game){
+
+
             $result[] = new Game(
-                $game['title']
+                $game['title'],
+                0
             );
         }
 

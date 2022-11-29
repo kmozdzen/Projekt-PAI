@@ -22,8 +22,16 @@ class MylistController extends AppController
 
     public function addGame()
     {
-        //to do
-        /*$this->mylistRepository->addGame($game);*/
+        if($this->isPost()){
+            $rating = $_POST['rating-text'];
+            $hours_played = $_POST['hours-text'];
+            $id_games = $_POST['found-game'];
+
+            $game = new Game($id_games, $rating);
+            $game->setHoursPlayed($hours_played);
+            $this->mylistRepository->addGame($game);
+
+        }
     }
 
 }

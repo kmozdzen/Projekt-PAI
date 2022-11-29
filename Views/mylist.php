@@ -42,15 +42,18 @@
                 </div>
                 <div class="list">
                     <ul>
-                        <?php foreach ($my_list as $game): ?>
+                        <?php $nr = 1 ?>
+                        <?php
+                        $a = 5;
+                        foreach ($my_list as $game): ?>
                             <li>
                                 <div class="l_position">
                                     <div class="number">
-                                        <p>1</p>
+                                        <p><?php echo $nr++?></p>
                                     </div>
                                     <div class="block">
-                                        <img src="Public/img/game.webp">
-                                        <p class="game-name">The Witcher: Wild Hunt</p>
+                                        <img src="Public/img/<?=$game->getImage();?>" alt=<?=$game->getImage();?>>
+                                        <p class="game-name"><?=$game->getTitle();?></p>
                                         <p class="rate"><?=$game->getRating();?></p>
                                     </div>
                                 </div>

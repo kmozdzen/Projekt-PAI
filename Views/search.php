@@ -54,15 +54,35 @@
                     </div>
                 </header>
                 <section class="add-game">
-                    <div id="game">
-                        <img src="Public/img/game.webp">
-                        <h1 id="found-game">Game</h1>
-                    </div>
-                    <div id="add">
-                        <p id="rating">Rating: -</p>
-                        <p id="hours-played">Hours played: -</p>
-                        <i class="fa-solid fa-circle-plus"></i>
-                    </div>                   
+                    <form action="addGame" method="POST" ENCTYPE="multipart/form-data">
+                        <div id="game">
+                            <img src="Public/img/game.webp">
+                            <input id="found-game" name="found-game" value="Game" readonly="readonly">
+                        </div>
+                        <div id="add">
+                                <p id="rating">
+                                    Rating:
+                                    <input name="rating-text" id="rating-text" type="number">
+                                    <!--<select id="rating-text">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                        <option>6</option>
+                                        <option>7</option>
+                                        <option>8</option>
+                                        <option>9</option>
+                                        <option>10</option>
+                                    </select>-->
+                                </p>
+                                <p id="hours-played">
+                                    Hours played:
+                                    <input name="hours-text" id="hours-text" type="number" min="0">
+                                </p>
+                                <button><i class="fa-solid fa-circle-plus"></i></button>
+                        </div>
+                    </form>
                 </section>
             </main>
         </div>

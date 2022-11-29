@@ -68,7 +68,7 @@ section
     text-align: center;
 }
 
-.add-game > #game
+.add-game > form > #game
 {   
     width: auto;
     min-width: 40vw;
@@ -83,14 +83,17 @@ section
 }
 
 
-.add-game > #game > img
+.add-game > form > #game > img
 {
     border-radius: 10px;
     width: 7vw;
     margin: 0;
 }
-
-.add-game > #game > #found-game
+.add-game > form > #game > input
+{
+    background: none;
+}
+.add-game > form > #game > #found-game
 {
     border: 3px solid #FFFFFF;
     border-radius: 30px;
@@ -102,7 +105,7 @@ section
     margin: auto;
 }
 
-.add-game > #add
+.add-game > form > #add
 {
     background: rgba(10, 0, 0, 0.78);
     border-radius: 10px;
@@ -118,8 +121,18 @@ section
 
     color: white;
 }
+#add > button
+{
+    background: none;
+    border: none;
+}
 
-#add > i
+#add > button:hover:not(.active)
+{
+    background: black;
+}
+
+#add > button > i
 {
     color: #4BAE4F;
     font-size: 2em;
