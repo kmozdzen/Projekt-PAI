@@ -1,0 +1,11 @@
+main
+{
+    position: relative;
+    top: 70vh;
+    width: 100vw;
+}
+
+.logout:hover
+{
+   cursor: pointer;
+}

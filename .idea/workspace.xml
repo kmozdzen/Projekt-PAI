@@ -1,25 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c860e711-a967-49d5-961d-4e13d6f3c792" name="Changes" comment="AppController, SecurityController changes">
-      <change afterPath="$PROJECT_DIR$/Public/img/elden_ring.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Public/img/forza5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Public/img/god_of_war.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Public/img/gta5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Public/img/heroes3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Public/img/red_dead_redemption_2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Public/img/witcher3.jpg" afterDir="false" />
+    <list default="true" id="c860e711-a967-49d5-961d-4e13d6f3c792" name="Changes" comment="visual and database changes, we can add games to list">
+      <change afterPath="$PROJECT_DIR$/Public/css/settings.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Public/img/god_of_war.avif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Public/js/statistics.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Views/settings.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker/postgres/extension-uuid.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controllers/StatisticsController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/Stats.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/repository/StatisticsRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Public/css/mylist.css" beforeDir="false" afterPath="$PROJECT_DIR$/Public/css/mylist.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Public/css/search.css" beforeDir="false" afterPath="$PROJECT_DIR$/Public/css/search.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Database.php" beforeDir="false" afterPath="$PROJECT_DIR$/Database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Public/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Public/js/add.js" beforeDir="false" afterPath="$PROJECT_DIR$/Public/js/add.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Routing.php" beforeDir="false" afterPath="$PROJECT_DIR$/Routing.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/login.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/mylist.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/mylist.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/search.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/search.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/statistics.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/statistics.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/users.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/users.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/DefaultController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/MylistController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/MylistController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Game.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Game.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/SecurityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/repository/GamesRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/GamesRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/repository/MylistRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/MylistRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/UserRepository.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,27 +57,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "import_schema_mapping": "<schema-mapping>\n  <databases>\n    <list>\n      <schema-mapping-item>\n        <source-data-source-id>564f32e9-b37a-4608-901b-c1a955092e8a</source-data-source-id>\n        <source-path>database/&quot;postgres&quot;/schema/&quot;schema&quot;</source-path>\n        <target-data-source-id>564f32e9-b37a-4608-901b-c1a955092e8a</target-data-source-id>\n        <target-path>database/&quot;postgres&quot;/schema/&quot;public&quot;</target-path>\n      </schema-mapping-item>\n    </list>\n  </databases>\n</schema-mapping>",
-    "last_opened_file_path": "C:/Users/PC/Desktop/Projekt Games App/Project/GameBook/src/controllers",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;import_schema_mapping&quot;: &quot;&lt;schema-mapping&gt;\n  &lt;databases&gt;\n    &lt;list&gt;\n      &lt;schema-mapping-item&gt;\n        &lt;source-data-source-id&gt;564f32e9-b37a-4608-901b-c1a955092e8a&lt;/source-data-source-id&gt;\n        &lt;source-path&gt;database/&amp;quot;postgres&amp;quot;/schema/&amp;quot;schema&amp;quot;&lt;/source-path&gt;\n        &lt;target-data-source-id&gt;564f32e9-b37a-4608-901b-c1a955092e8a&lt;/target-data-source-id&gt;\n        &lt;target-path&gt;database/&amp;quot;postgres&amp;quot;/schema/&amp;quot;public&amp;quot;&lt;/target-path&gt;\n      &lt;/schema-mapping-item&gt;\n    &lt;/list&gt;\n  &lt;/databases&gt;\n&lt;/schema-mapping&gt;&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/PC/Desktop/Projekt Games App/Project/GameBook/src/controllers&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\PC\Desktop\Projekt Games App\Project\GameBook\src\controllers" />
       <recent name="C:\Users\PC\Desktop\Projekt Games App\Project\GameBook\src\repository" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\PC\Desktop\Projekt Games App\Project\GameBook\Public\img" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -87,6 +100,14 @@
       <workItem from="1669048960893" duration="8787000" />
       <workItem from="1669112661915" duration="9449000" />
       <workItem from="1669654464082" duration="10636000" />
+      <workItem from="1669829116388" duration="1941000" />
+      <workItem from="1669984280436" duration="132000" />
+      <workItem from="1670341525031" duration="111000" />
+      <workItem from="1670520023783" duration="489000" />
+      <workItem from="1672487858925" duration="3257000" />
+      <workItem from="1672575734491" duration="11974000" />
+      <workItem from="1672668461463" duration="12449000" />
+      <workItem from="1672846969786" duration="18796000" />
     </task>
     <task id="LOCAL-00001" summary="added User">
       <created>1668507390303</created>
@@ -109,7 +130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668513121650</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="visual and database changes, we can add games to list">
+      <created>1669748609620</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1669748609620</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -130,6 +158,7 @@
     <MESSAGE value="added User, SecurityController" />
     <MESSAGE value="added User" />
     <MESSAGE value="AppController, SecurityController changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="AppController, SecurityController changes" />
+    <MESSAGE value="visual and database changes, we can add games to list" />
+    <option name="LAST_COMMIT_MESSAGE" value="visual and database changes, we can add games to list" />
   </component>
 </project>

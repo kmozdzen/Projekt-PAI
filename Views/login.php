@@ -26,7 +26,7 @@
                     <p class="input-names">Password</p>
                     <input name="password" type="password" placeholder="password">
                     <button class="sign-in" type="submit"><span>Sign in</span></button>
-                    <button><span>Register</span></button>
+                    <a href="register"register-button"><span>Register</span></button></a>
                 </form>
             </div>
         </div>

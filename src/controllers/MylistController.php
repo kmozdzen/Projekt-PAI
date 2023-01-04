@@ -34,4 +34,9 @@ class MylistController extends AppController
         }
     }
 
+    public function updateAllGames(){
+        $this->mylistRepository->updateAllGames();
+        http_response_code(200);
+    }
+
 }

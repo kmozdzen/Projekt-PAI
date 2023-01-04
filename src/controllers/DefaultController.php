@@ -22,4 +22,9 @@ class DefaultController extends AppController{
     {
         $this->render('users');
     }
+
+    public function settings()
+    {
+        $this->render('settings');
+    }
 }

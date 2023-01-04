@@ -32,7 +32,7 @@
                             <a href="users" class="button">Users</a>
                         </li>
                         <li>
-                            <a href="#" class="setting-button"><i class="fa-solid fa-gear"></i></a>
+                            <a href="settings" class="setting-button"><i class="fa-solid fa-gear"></i></a>
                         </li>
                     </ul>
                 </div>
@@ -56,7 +56,7 @@
                 <section class="add-game">
                     <form action="addGame" method="POST" ENCTYPE="multipart/form-data">
                         <div id="game">
-                            <img src="Public/img/game.webp">
+                            <img id="game-img" src="Public/img/game.webp">
                             <input id="found-game" name="found-game" value="Game" readonly="readonly">
                         </div>
                         <div id="add">

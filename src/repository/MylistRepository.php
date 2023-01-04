@@ -69,7 +69,7 @@ class MylistRepository extends Repository
         $result = [];
 
         $stmt = $this->database->connect()->prepare('
-            SELECT title, rating, image FROM my_list JOIN games g on g.id = my_list.id_games order by -rating
+            SELECT title, rating, hours_played, image FROM my_list JOIN games g on g.id = my_list.id_games order by -rating
         ');
         $stmt->execute();
         $my_list = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -86,5 +86,12 @@ class MylistRepository extends Repository
         return $result;
     }
 
+    public function updateAllGames(){
+        $stmt = $this->database->connect()->prepare('
+            UPDATE statistics SET "all_games" = "all_games" + 1;
+        ');
+
+        $stmt->execute();
+    }
 
 }

@@ -31,32 +31,39 @@
                         <a href="users" class="button">Users</a>
                     </li>
                     <li>
-                        <a href="#" class="setting-button"><i class="fa-solid fa-gear"></i></a>
+                        <a href="settings" class="setting-button"><i class="fa-solid fa-gear"></i></a>
                     </li>
                 </ul>
                 </div>
             </nav>
             <main>
                 <ul>
+
                     <li>
                         <div class="stats">
                             <h1>All games</h1>
                             <hr>
-                            <p id="all-games">17</p>
+                            <p id="all-games">
+                                <?php echo $statistics->getAllGames() ?>
+                            </p>
                         </div>
                     </li>
                     <li>
                         <div class="stats">
                             <h1>Average rating</h1>
                             <hr>
-                            <p id="average">7.0</p>
+                            <p id="average">
+                                <?php echo $statistics->getAverageRating() ?>
+                            </p>
                         </div>
                     </li>
                     <li>
                         <div class="stats">
                             <h1>Hours played</h1>
                             <hr>
-                            <p id="hours">349</p>
+                            <p id="hours">
+                                <?php echo $statistics->getHoursPlayed() ?>
+                            </p>
                         </div>
                     </li>
                     <li>
@@ -66,7 +73,9 @@
                                 <i class="fa-solid fa-heart"></i>
                             </div>
                             <hr>
-                            <p id="likes">43</p>
+                            <p id="likes">
+                                <?php echo $statistics->getYourLikes() ?>
+                            </p>
                         </div>
                     </li>
                 </ul>

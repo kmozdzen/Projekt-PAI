@@ -6,7 +6,7 @@ require_once __DIR__ . '/../models/Game.php';
 class GamesRepository extends Repository
 {
 
-    public function getGame(string $id): ?Game
+   /* public function getGame(string $id): ?Game
     {
         $stmt = $this->database->connect()->prepare('
             SELECT * FROM game WHERE id = :id
@@ -23,7 +23,7 @@ class GamesRepository extends Repository
         return new Game(
             $game['title']
         );
-    }
+    }*/
 
     public function getGames(): array
     {
@@ -40,7 +40,7 @@ class GamesRepository extends Repository
 
             $result[] = new Game(
                 $game['title'],
-                0
+                $game['rating'],
             );
         }
 

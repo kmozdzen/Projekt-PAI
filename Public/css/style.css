@@ -169,7 +169,7 @@ nav > .hider
 nav > .strap
 {
     position: fixed;
-    top: 0;
+    top: 102px;
     left: 0;
 
     width: 100%;

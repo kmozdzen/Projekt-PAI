@@ -31,7 +31,7 @@
                             <a href="users" class="button">Users</a>
                         </li>
                         <li>
-                            <a href="#" class="setting-button"><i class="fa-solid fa-gear"></i></a>
+                            <a href="settings" class="setting-button"><i class="fa-solid fa-gear"></i></a>
                         </li>
                     </ul>
                 </div>
