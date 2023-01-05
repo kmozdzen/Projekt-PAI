@@ -2,6 +2,7 @@
 
 require_once 'Repository.php';
 require_once __DIR__.'/../models/User.php';
+require_once __DIR__.'/../models/Game.php';
 require_once __DIR__.'/../models/Stats.php';
 
 class UserRepository extends Repository
@@ -97,5 +98,86 @@ class UserRepository extends Repository
 
         $data = $stmt->fetch(PDO::FETCH_ASSOC);
         return $data['id'];
+    }
+
+    public function getUsers(): array
+    {
+        $result = [];
+
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM users
+        ');
+        $stmt->execute();
+        $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($users as $user){
+            $result[] = new User(
+                $user['email'],
+                $user['password'],
+                '',''
+            );
+        }
+
+        return $result;
+    }
+
+    public function getUserByEmail(string $emailString){
+
+        $stmt = $this->database->connect()->prepare('
+            SELECT user FROM users WHERE email LIKE :add
+        ');
+
+        $stmt->bindParam(':add', $emailString, PDO::PARAM_STR);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function getUserStats($user_name) : array
+    {
+        $result = [];
+
+       /* $stmt = $this->database->connect()->prepare('
+            SELECT * FROM statistics WHERE id = (SELECT id_statistics FROM users WHERE email = :user_name)
+        ');
+        $stmt->bindParam(':user_name', $user_name, PDO::PARAM_STR);
+        $stmt->execute();
+        $stats = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($stats as $stat){
+            $result[] = $stat['your_likes'];
+        }*/
+
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM my_list WHERE id_user = (SELECT id FROM users WHERE email = :user_name) ORDER BY -rating LIMIT 3
+        ');
+        $stmt->bindParam(':user_name', $user_name, PDO::PARAM_STR);
+        $stmt->execute();
+        $games = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($games as $game){
+            $g = new Game(
+                'game',
+                $game['rating'],
+            );
+            $result[] = $g;
+        }
+        return $result;
+    }
+
+    public function getLikes($user_name){
+        $result = '';
+
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM statistics WHERE id = (SELECT id_statistics FROM users WHERE email = :user_name)
+        ');
+        $stmt->bindParam(':user_name', $user_name, PDO::PARAM_STR);
+        $stmt->execute();
+        $stats = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($stats as $stat){
+            $result = $stat['your_likes'];
+        }
+        return $result;
     }
 }

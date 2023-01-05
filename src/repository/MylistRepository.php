@@ -44,23 +44,26 @@ class MylistRepository extends Repository
             $idGames = $g['id'];
         }
 
-        $stmt = $this->database->connect()->prepare('
+        /*$stmt = $this->database->connect()->prepare('
             UPDATE games SET added = true WHERE id = :id
         ');
         $stmt->bindParam(':id', $idGames, PDO::PARAM_INT);
-        $stmt->execute();
+        $stmt->execute();*/
 
 
         $stmt = $this->database->connect()->prepare('
-            INSERT INTO my_list (rating, hours_played, added_at, id_games)
-            VALUES (?, ?, ?, ?)
+            INSERT INTO my_list (rating, hours_played, added_at, id_games, id_user)
+            VALUES (?, ?, ?, ?, ?)
         ');
+
+        $idUser = 4;
 
         $stmt->execute([
             $game->getRating(),
             $game->getHoursPlayed(),
             $date->format('Y-m-d'),
-            $idGames
+            $idGames,
+            $idUser
         ]);
     }
 
@@ -68,9 +71,20 @@ class MylistRepository extends Repository
     {
         $result = [];
 
-        $stmt = $this->database->connect()->prepare('
+        $mail = $_COOKIE['email'];
+        echo $mail;
+
+        /*$stmt = $this->database->connect()->prepare('
             SELECT title, rating, hours_played, image FROM my_list JOIN games g on g.id = my_list.id_games order by -rating
         ');
+        $stmt->execute();
+        $my_list = $stmt->fetchAll(PDO::FETCH_ASSOC);*/
+
+        $stmt = $this->database->connect()->prepare('
+              SELECT rating, hours_played FROM my_list WHERE id_user = (SELECT id FROM users WHERE email = :mail) 
+
+        ');
+        $stmt->bindParam(':mail', $mail, PDO::PARAM_STR);
         $stmt->execute();
         $my_list = $stmt->fetchAll(PDO::FETCH_ASSOC);
 

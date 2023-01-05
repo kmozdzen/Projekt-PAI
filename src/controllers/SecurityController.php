@@ -39,8 +39,9 @@ class SecurityController extends AppController
         }
 
         if(isset($_POST['email'])){
-            setcookie('email', $_POST['email'], time() + 3600);
+            setcookie('email', $_POST['email'], time() + 3600 * 30);
         }
+
 
         $url = "http://$_SERVER[HTTP_HOST]";
         header("Location: {$url}/search");

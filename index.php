@@ -11,12 +11,11 @@ Routing::post('login', 'SecurityController');
 Routing::post('register', 'SecurityController');
 Routing::post('add', 'GamesController');
 Routing::post('addGame', 'MylistController');
+Routing::post('getUserStats', 'UsersController');
 
 Routing::get('mylist', 'MylistController');
-Routing::get('statistics', 'StatisticsController');
-Routing::get('users', 'DefaultController');
+Routing::get('statistics', 'StatController');
+Routing::get('users', 'UsersController');
 Routing::get('settings', 'DefaultController');
-
-Routing::get('updateAllGames', 'MylistController');
 
 Routing::run($path);

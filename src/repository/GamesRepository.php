@@ -27,11 +27,15 @@ class GamesRepository extends Repository
 
     public function getGames(): array
     {
+        $mail = $_COOKIE['email'];
+        echo $mail;
+
         $result = [];
 
         $stmt = $this->database->connect()->prepare('
-            SELECT * FROM games WHERE added = false
+            SELECT * FROM games WHERE id NOT IN (SELECT id_games FROM my_list WHERE id_user = (SELECT id FROM users WHERE email = :mail));
         ');
+        $stmt->bindParam(':mail', $mail, PDO::PARAM_STR);
         $stmt->execute();
         $games = $stmt->fetchAll(PDO::FETCH_ASSOC);
 

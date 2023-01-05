@@ -4,7 +4,8 @@ require_once 'src/controllers/DefaultController.php';
 require_once 'src/controllers/SecurityController.php';
 require_once 'src/controllers/MylistController.php';
 require_once 'src/controllers/GamesController.php';
-require_once 'src/controllers/StatisticsController.php';
+require_once 'src/controllers/UsersController.php';
+require_once 'src/controllers/StatController.php';
 
 class Routing{
     public static $routes;

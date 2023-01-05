@@ -11,13 +11,6 @@ function addGame(){
 
     gameToAdd.value = add.value;
 
-    window.location.href = "http://localhost:8080/statistics";
-    window.location.replace("http://localhost:8080/statistics");
-    fetch('/updateAllGames')
-        .then(function () {
-            document.getElementById("all-games").innerHTML = 2;
-        })
-
     /*fetch("/add", {
         method: "POST",
         headers: {

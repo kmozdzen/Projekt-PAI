@@ -30,7 +30,7 @@ class MylistController extends AppController
             $game = new Game($id_games, $rating);
             $game->setHoursPlayed($hours_played);
             $this->mylistRepository->addGame($game);
-
+            $this->render('search');
         }
     }
 

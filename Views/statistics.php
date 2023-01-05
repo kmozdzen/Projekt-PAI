@@ -37,14 +37,14 @@
                 </div>
             </nav>
             <main>
+                <?php foreach ($stats as $stat): ?>
                 <ul>
-
                     <li>
                         <div class="stats">
                             <h1>All games</h1>
                             <hr>
                             <p id="all-games">
-                                <?php echo $statistics->getAllGames() ?>
+                                <?=$stat->getAllGames();?>
                             </p>
                         </div>
                     </li>
@@ -53,7 +53,7 @@
                             <h1>Average rating</h1>
                             <hr>
                             <p id="average">
-                                <?php echo $statistics->getAverageRating() ?>
+                                <?=$stat->getAverageRating();?>
                             </p>
                         </div>
                     </li>
@@ -62,7 +62,7 @@
                             <h1>Hours played</h1>
                             <hr>
                             <p id="hours">
-                                <?php echo $statistics->getHoursPlayed() ?>
+                                <?=$stat->getHoursPlayed();?>
                             </p>
                         </div>
                     </li>
@@ -74,11 +74,12 @@
                             </div>
                             <hr>
                             <p id="likes">
-                                <?php echo $statistics->getYourLikes() ?>
+                                <?=$stat->getYourLikes();?>
                             </p>
                         </div>
                     </li>
                 </ul>
+                <?php endforeach; ?>
             </main>
         </div>
     </body>
