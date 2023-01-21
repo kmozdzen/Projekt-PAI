@@ -40,25 +40,37 @@ class GamesRepository extends Repository
         $games = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         foreach ($games as $game){
-
-
-            $result[] = new Game(
+            $g = new Game(
                 $game['title'],
                 $game['rating'],
             );
+            $g->setImage($game['image']);
+            $result[] = $g ;
         }
 
         return $result;
     }
 
     public function getGameByTitle(string $searchString){
+        echo $searchString;
 
         $stmt = $this->database->connect()->prepare('
-            SELECT game FROM games WHERE title LIKE :add
+            SELECT * FROM games WHERE title LIKE :add
         ');
 
         $stmt->bindParam(':add', $searchString, PDO::PARAM_STR);
         $stmt->execute();
+        $games = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($games as $game){
+            echo $game['title'];
+            $g = new Game(
+                $game['title'],
+                $game['rating'],
+            );
+            $g->setImage($game['image']);
+            $result[] = $g ;
+        }
 
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }

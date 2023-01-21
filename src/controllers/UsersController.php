@@ -36,13 +36,11 @@ class UsersController extends AppController
     public function getUserStats()
     {
         if($this->isPost()) {
-            print_r($_POST);
             $user_name = $_POST['show-user'];
 
             $result = $this->userRepository->getUserStats($user_name);
             $likes = $this->userRepository->getLikes($user_name);
-            echo $likes;
-            $this->render('users', ['result' => $result, 'likes' => $likes]);
+            $this->render('users', ['result' => $result, 'likes' => $likes, 'name' => $user_name]);
         }
     }
 

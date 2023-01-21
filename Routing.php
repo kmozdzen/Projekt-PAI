@@ -32,8 +32,8 @@ class Routing{
         $object = new $controller;
         $action = $action ?: 'index';
 
-        $id = $urlParts[1] ?? '';
+        $name = $urlParts[1] ?? '';
 
-        $object->$action($id);
+        $object->$action($name);
     }
 }

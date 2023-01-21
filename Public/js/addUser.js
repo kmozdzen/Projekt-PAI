@@ -9,6 +9,4 @@ function addUser() {
     const data = {add: add.value};
 
     user.value = add.value;
-    likes.innerHTML = '4';
-
 }

@@ -17,5 +17,6 @@ Routing::get('mylist', 'MylistController');
 Routing::get('statistics', 'StatController');
 Routing::get('users', 'UsersController');
 Routing::get('settings', 'DefaultController');
+Routing::get('likes', 'StatController');
 
 Routing::run($path);

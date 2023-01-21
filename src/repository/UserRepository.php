@@ -149,7 +149,7 @@ class UserRepository extends Repository
         }*/
 
         $stmt = $this->database->connect()->prepare('
-            SELECT * FROM my_list WHERE id_user = (SELECT id FROM users WHERE email = :user_name) ORDER BY -rating LIMIT 3
+            SELECT * FROM my_list_view WHERE id_user = (SELECT id FROM users WHERE email = :user_name) ORDER BY -rating LIMIT 3
         ');
         $stmt->bindParam(':user_name', $user_name, PDO::PARAM_STR);
         $stmt->execute();
@@ -157,9 +157,11 @@ class UserRepository extends Repository
 
         foreach ($games as $game){
             $g = new Game(
-                'game',
+                $game['title'],
                 $game['rating'],
             );
+            $g->setImage($game['image']);
+
             $result[] = $g;
         }
         return $result;

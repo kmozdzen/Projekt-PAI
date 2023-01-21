@@ -17,5 +17,11 @@ class StatController extends AppController
         $stats = $this->statRepository->getStats();
         $this->render('statistics', ['stats' => $stats]);
     }
+
+    public function likes(string $name){
+
+        $this->statRepository->likes($name);
+        http_response_code(200);
+    }
 }
 
