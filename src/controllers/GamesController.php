@@ -16,17 +16,16 @@ class GamesController extends AppController
 
     public function search()
     {
-        $games = $this->gamesRepository->getGames();
+        $id = $this->isAuthorized();
+        $games = $this->gamesRepository->getGames($id);
         $this->render('search', ['games' => $games]);
     }
 
     public function add(){
-        echo 123;
         $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
         if ($contentType === "application/json") {
             $content = trim(file_get_contents("php://input"));
             $decoded = json_decode($content, true);
-            echo 45;
             header('Content-type: application/json');
             http_response_code(200);
             echo json_encode($this->gamesRepository->getGameByTitle($decoded['add']));

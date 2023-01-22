@@ -38,10 +38,7 @@ class SecurityController extends AppController
             return $this->render('login', ['messages' => ['Wrong password!']]);
         }
 
-        if(isset($_POST['email'])){
-            setcookie('email', $_POST['email'], time() + 3600 * 30);
-        }
-
+        $this->cookieRepository->createUserSession($user->getId());
 
         $url = "http://$_SERVER[HTTP_HOST]";
         header("Location: {$url}/search");
@@ -60,11 +57,16 @@ class SecurityController extends AppController
         $surname = $_POST['surname'];
         $phone = $_POST['phone'];
 
+        foreach ($_POST as $place) {
+            if ($this->validate($place)) {
+                return $this->render('register', ['messages' => ['Received invalid request!']]);
+            }
+        }
+
         if ($password !== $confirmedPassword) {
             return $this->render('register', ['messages' => ['Please provide proper password']]);
         }
 
-        //TODO try to use better hash function
         $user = new User($email, md5($password), $name, $surname);
         $user->setPhone($phone);
 
@@ -73,4 +75,16 @@ class SecurityController extends AppController
         return $this->render('login', ['messages' => ['You\'ve been succesfully registrated!']]);
     }
 
+    public function logout()
+    {
+        $this->cookieRepository->endUserSession();
+
+        $url = "http://$_SERVER[HTTP_HOST]";
+        header("Location: {$url}");
+    }
+
+    private function validate(string $place): bool
+    {
+        return $place == null || $place == "" || strlen($place) > 64;
+    }
 }

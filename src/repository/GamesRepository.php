@@ -25,17 +25,15 @@ class GamesRepository extends Repository
         );
     }*/
 
-    public function getGames(): array
+    public function getGames($id): array
     {
-        $mail = $_COOKIE['email'];
-        echo $mail;
 
         $result = [];
 
         $stmt = $this->database->connect()->prepare('
-            SELECT * FROM games WHERE id NOT IN (SELECT id_games FROM my_list WHERE id_user = (SELECT id FROM users WHERE email = :mail));
+            SELECT * FROM games WHERE id NOT IN (SELECT id_games FROM my_list WHERE id_user = (SELECT id FROM users WHERE id = :id));
         ');
-        $stmt->bindParam(':mail', $mail, PDO::PARAM_STR);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->execute();
         $games = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -55,22 +53,11 @@ class GamesRepository extends Repository
         echo $searchString;
 
         $stmt = $this->database->connect()->prepare('
-            SELECT * FROM games WHERE title LIKE :add
+            SELECT * FROM games WHERE title = :add
         ');
 
         $stmt->bindParam(':add', $searchString, PDO::PARAM_STR);
         $stmt->execute();
-        $games = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-        foreach ($games as $game){
-            echo $game['title'];
-            $g = new Game(
-                $game['title'],
-                $game['rating'],
-            );
-            $g->setImage($game['image']);
-            $result[] = $g ;
-        }
 
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }

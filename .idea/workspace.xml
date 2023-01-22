@@ -1,25 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c860e711-a967-49d5-961d-4e13d6f3c792" name="Changes" comment="statistics good, users not good yet">
-      <change afterPath="$PROJECT_DIR$/Public/img/lol.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Public/js/statistics.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/nav.php" afterDir="false" />
+    <list default="true" id="c860e711-a967-49d5-961d-4e13d6f3c792" name="Changes" comment="statistics, profile likes">
+      <change afterPath="$PROJECT_DIR$/Public/js/scripts2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/repository/CookieRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Public/css/users.css" beforeDir="false" afterPath="$PROJECT_DIR$/Public/css/users.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Public/css/settings.css" beforeDir="false" afterPath="$PROJECT_DIR$/Public/css/settings.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Public/js/add.js" beforeDir="false" afterPath="$PROJECT_DIR$/Public/js/add.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Public/js/addUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/Public/js/addUser.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Routing.php" beforeDir="false" afterPath="$PROJECT_DIR$/Routing.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/mylist.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/mylist.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/search.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/search.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/settings.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/settings.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/statistics.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/statistics.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/users.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/users.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/AppController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/AppController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/DefaultController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/GamesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/GamesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/MylistController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/MylistController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/SecurityController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/StatController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/StatController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/UsersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/UsersController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/repository/GamesRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/GamesRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/repository/MylistRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/MylistRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/repository/StatRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/StatRepository.php" afterDir="false" />
@@ -53,7 +51,9 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Public/js" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/Public/js/scripts.js" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -97,7 +97,9 @@
       <workItem from="1674300987111" duration="146000" />
       <workItem from="1674301835491" duration="43000" />
       <workItem from="1674302832474" duration="33000" />
-      <workItem from="1674302875217" duration="17547000" />
+      <workItem from="1674302875217" duration="17640000" />
+      <workItem from="1674384439184" duration="12711000" />
+      <workItem from="1674413171846" duration="11398000" />
     </task>
     <task id="LOCAL-00001" summary="added User">
       <created>1668507390303</created>
@@ -141,7 +143,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672962648203</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="statistics, profile likes">
+      <created>1674321609202</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1674321609202</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -165,6 +174,7 @@
     <MESSAGE value="visual and database changes, we can add games to list" />
     <MESSAGE value="database revolution" />
     <MESSAGE value="statistics good, users not good yet" />
-    <option name="LAST_COMMIT_MESSAGE" value="statistics good, users not good yet" />
+    <MESSAGE value="statistics, profile likes" />
+    <option name="LAST_COMMIT_MESSAGE" value="statistics, profile likes" />
   </component>
 </project>

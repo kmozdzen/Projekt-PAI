@@ -14,12 +14,12 @@ class StatController extends AppController
     }
 
     public function statistics(){
-        $stats = $this->statRepository->getStats();
+        $id = $this->isAuthorized();
+        $stats = $this->statRepository->getStats($id);
         $this->render('statistics', ['stats' => $stats]);
     }
 
     public function likes(string $name){
-
         $this->statRepository->likes($name);
         http_response_code(200);
     }

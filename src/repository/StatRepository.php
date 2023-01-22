@@ -7,20 +7,15 @@ require_once __DIR__ . '/../models/Stats.php';
 class StatRepository extends Repository
 {
 
-    public function getStats() : array
+    public function getStats($id) : array
     {
-        $email = '';
         $result = [];
 
-        if(isset($_COOKIE['email'])){
-            $email = $_COOKIE['email'];
-        }
-
         $stmt = $this->database->connect()->prepare('
-            SELECT * FROM statistics WHERE id = (SELECT id_statistics FROM users WHERE email = :email)
+            SELECT * FROM statistics WHERE id = (SELECT id_statistics FROM users WHERE id = :id)
         ');
 
-        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->execute();
         $stats = $stmt->fetchAll(PDO::FETCH_ASSOC);
 

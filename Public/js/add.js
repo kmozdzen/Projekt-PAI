@@ -1,5 +1,5 @@
 const add = document.querySelector('input[placeholder="Search for games"]');
-const button = document.querySelector("#plus");
+const button = document.querySelector(".fa-plus");
 const gameToAdd = document.getElementById("found-game");
 const img = document.getElementById("game-img");
 const gameContainer = document.getElementById("game");
@@ -12,43 +12,34 @@ function addGame(){
 
     gameToAdd.value = add.value;
 
-    /*fetch('/add', {
-        method: 'POST', // or 'PUT'
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-    })
-        .then((response) => response.json())
-        .then((data) => {
-            console.log('Success:', data);
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-        });*/
-
-   /* const data = {
-        title: 'Test title',
-        body: 'Test body',
-        userId: 42
-    }*/
-
-    /*const options = {
-        method: 'POST',
-        body: JSON.stringify(data),
+    /*fetch(`/add`, {
+        method: "POST",
         headers: {
             'Content-Type': 'application/json'
-        }
-    };
-
-    fetch('/add', options)
-        .then(response => response.json())
-        .then(game => foundGame(game));*/
+        },
+        body: JSON.stringify(data)
+    }).then(function (response) {
+        return response.json();
+    }).then(function (game) {
+        gameToAdd.value = "weszlo";
+        //foundGame(game)
+    });*/
+       /* console.log("inside handleGetJson");
+        fetch(`/add`, {
+            method: "POST",
+            headers : {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+            .then((response) => response.json())
+            .then((messages) => {console.log("messages");});*/
 }
 
 
-function foundGame(games) {
-        console.log(game);
+function foundGame(game) {
+    createGame(game)
 }
 
 

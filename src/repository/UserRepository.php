@@ -11,7 +11,7 @@ class UserRepository extends Repository
     public function getUser(string $email): ?User
     {
         $stmt = $this->database->connect()->prepare('
-            SELECT * FROM users u LEFT JOIN users_details ud 
+            SELECT u.id, name, surname, email, password FROM users u JOIN users_details ud 
             ON u.id_user_details = ud.id WHERE email = :email
         ');
         $stmt->bindParam(':email', $email, PDO::PARAM_STR);
@@ -23,12 +23,15 @@ class UserRepository extends Repository
             return null;
         }
 
-        return new User(
+        $u = new User(
             $user['email'],
             $user['password'],
             $user['name'],
-            $user['surname']
-        );
+            $user['surname']);
+
+        $u->setId($user['id']);
+
+        return $u;
     }
 
     public function addUser(User $user)
@@ -181,5 +184,90 @@ class UserRepository extends Repository
             $result = $stat['your_likes'];
         }
         return $result;
+    }
+
+    public function changeData($user, $id)
+    {
+
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM users u JOIN users_details ud ON u.id_user_details = ud.id WHERE u.id = :id;
+        ');
+
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+        $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        $oldUser = new User("", "", "", "");
+        $idStats = 0;
+        foreach ($users as $u){
+            $oldUser->setEmail($u['email']);
+            $oldUser->setPassword($u['password']);
+            $oldUser->setName($u['name']);
+            $oldUser->setSurname($u['surname']);
+            $oldUser->setPhone($u['phone']);
+            $idStats = $u['id_user_details'];
+        }
+
+        if ($this->validate($user->getEmail())){
+            $user->setEmail($oldUser->getEmail());
+        }
+        if ($this->validate($user->getPassword())){
+            $user->setPassword($oldUser->getPassword());
+        }
+        if ($this->validate($user->getName())){
+            $user->setName($oldUser->getName());
+        }
+        if ($this->validate($user->getSurname())){
+            $user->setSurname($oldUser->getSurname());
+        }
+        if ($this->validate($user->getPhone())){
+            $user->setPhone($oldUser->getPhone());
+        }
+
+        $stmt = $this->database->connect()->prepare('
+            UPDATE users_details SET name = :name, surname = :surname, phone = :phone WHERE id = :id;
+        ');
+
+        $stmt->bindParam(':name', $user->getName(), PDO::PARAM_STR);
+        $stmt->bindParam(':surname', $user->getSurname(), PDO::PARAM_STR);
+        $stmt->bindParam(':phone', $user->getPhone(), PDO::PARAM_STR);
+        $stmt->bindParam(':id', $idStats, PDO::PARAM_INT);
+        $stmt->execute();
+
+        $stmt = $this->database->connect()->prepare('
+            UPDATE users SET email = :email, password = :password WHERE id = :id;
+        ');
+
+        $stmt->bindParam(':email', $user->getEmail(), PDO::PARAM_STR);
+        $stmt->bindParam(':password', $user->getPassword(), PDO::PARAM_STR);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+    }
+
+    public function settings($id) : User
+    {
+
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM users u JOIN users_details ud ON u.id_user_details = ud.id WHERE u.id = :id;
+        ');
+
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+        $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        $user = new User("", "", "", "");
+        foreach ($users as $u){
+            $user->setEmail($u['email']);
+            $user->setPassword($u['password']);
+            $user->setName($u['name']);
+            $user->setSurname($u['surname']);
+            $user->setPhone($u['phone']);
+        }
+        return $user;
+    }
+
+    private function validate(string $place): bool
+    {
+        return $place == NULL || $place == "" || strlen($place) > 64;
     }
 }

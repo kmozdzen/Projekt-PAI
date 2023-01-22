@@ -7,6 +7,7 @@ class User
     private $name;
     private $surname;
     private $phone;
+    private $id;
 
     public function __construct(
         string $email,
@@ -19,6 +20,19 @@ class User
         $this->name = $name;
         $this->surname = $surname;
     }
+
+
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    public function setId($id): void
+    {
+        $this->id = $id;
+    }
+
+
 
     public function getPhone()
     {

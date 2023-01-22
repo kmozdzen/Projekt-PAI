@@ -26,7 +26,7 @@
                         <div class="icons">
                             <button><i class="fa-solid fa-xmark"></i></button>
                             <hr/>
-                            <button id="plus"><i class="fa-solid fa-plus"></i></button>
+                            <i class="fa-solid fa-plus"></i>
                         </div>    
                     </div>
                 </header>
@@ -39,7 +39,7 @@
                         <div id="add">
                                 <p id="rating">
                                     Rating:
-                                    <input name="rating-text" id="rating-text" type="number">
+                                    <input name="rating-text" id="rating-text" type="number" value="0">
                                     <!--<select id="rating-text">
                                         <option>1</option>
                                         <option>2</option>
@@ -55,7 +55,7 @@
                                 </p>
                                 <p id="hours-played">
                                     Hours played:
-                                    <input name="hours-text" id="hours-text" type="number" min="0">
+                                    <input name="hours-text" id="hours-text" type="number" min="0" value="0">
                                 </p>
                                 <button><i class="fa-solid fa-circle-plus"></i></button>
                         </div>

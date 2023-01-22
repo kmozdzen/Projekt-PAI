@@ -1,11 +1,14 @@
 <?php
+require_once __DIR__.'/../repository/CookieRepository.php';
 
 class AppController{
 
     private $request;
+    protected $cookieRepository;
 
     public function __construct()
     {
+        $this->cookieRepository = new CookieRepository();
         $this->request = $_SERVER['REQUEST_METHOD'];
     }
 
@@ -32,5 +35,20 @@ class AppController{
             $output = ob_get_clean();
         }
         print $output;
+    }
+
+    protected function isAuthorized(): int
+    {
+        if (isset($_COOKIE["session_token"])) {
+            try {
+                return $this->cookieRepository->getUserId();
+            } catch (Exception $exception) {
+                http_response_code(401);
+                exit;
+            }
+        } else {
+            http_response_code(401);
+            exit;
+        }
     }
 }

@@ -26,7 +26,7 @@ class MylistRepository extends Repository
         );
     }
 
-    public function addGame(Game $game): void
+    public function addGame(Game $game, $id): void
     {
         $date = new DateTime();
         $title = $game->getTitle();
@@ -43,12 +43,11 @@ class MylistRepository extends Repository
             $idGames = $g['id'];
         }
 
-        $mail = $_COOKIE['email'];
 
         $stmt = $this->database->connect()->prepare('
-              SELECT * FROM users WHERE email = :mail
+              SELECT * FROM users WHERE id = :id
         ');
-        $stmt->bindParam(':mail', $mail, PDO::PARAM_STR);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->execute();
         $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -59,8 +58,7 @@ class MylistRepository extends Repository
             $idStats = $user['id_statistics'];
         }
 
-
-       /* $stmt = $this->database->connect()->prepare('
+        $stmt = $this->database->connect()->prepare('
             INSERT INTO my_list (rating, hours_played, added_at, id_games, id_user)
             VALUES (?, ?, ?, ?, ?)
         ');
@@ -71,7 +69,7 @@ class MylistRepository extends Repository
             $date->format('Y-m-d'),
             $idGames,
             $idUser
-        ]);*/
+        ]);
 
         $stmt = $this->database->connect()->prepare('
             SELECT * FROM statistics WHERE id = :idStats
@@ -103,17 +101,15 @@ class MylistRepository extends Repository
         $stmt->execute();
     }
 
-    public function getGames(): array
+    public function getGames($id): array
     {
         $result = [];
 
-        $mail = $_COOKIE['email'];
-
         $stmt = $this->database->connect()->prepare('
-              SELECT * FROM my_list_view WHERE id_user = (SELECT id FROM users WHERE email = :mail) 
+              SELECT * FROM my_list_view WHERE id_user = (SELECT id FROM users WHERE id = :id) 
 
         ');
-        $stmt->bindParam(':mail', $mail, PDO::PARAM_STR);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->execute();
         $my_list = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
