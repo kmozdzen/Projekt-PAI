@@ -5,6 +5,7 @@
         <link rel="stylesheet" type="text/css" href="Public/css/mylist.css"/>
         <title>YourGameBook</title>
         <script src="https://kit.fontawesome.com/3ff5952e8a.js" crossorigin="anonymous"></script>
+        <script src="Public/js/list.js" type="text/javascript" defer></script>
     </head>
     <body>
         <div class="base-container">

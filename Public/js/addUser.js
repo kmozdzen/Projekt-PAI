@@ -1,5 +1,5 @@
 const add = document.querySelector('input[placeholder="Search for users"]');
-const button = document.querySelector(".plus");
+const button = document.querySelector(".fa-plus");
 const user= document.getElementById("user-name");
 const likes= document.getElementById("likes");
 

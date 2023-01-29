@@ -6,6 +6,7 @@
     <title>YourGameBook</title>
     <script src="https://kit.fontawesome.com/3ff5952e8a.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="./public/js/scripts2.js" defer></script>
+    <script src="Public/js/list.js" type="text/javascript" defer></script>
 </head>
 <body>
 <div class="base-container">

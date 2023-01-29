@@ -25,6 +25,10 @@ class MylistController extends AppController
     {
         $id = $this->isAuthorized();
         if($this->isPost()){
+            echo $_POST['rating-text'];
+            echo $_POST['hours-text'];
+            echo $_POST['found-game'];
+
             if($_POST['rating-text'] != null && $_POST['rating-text'] != "" &&
                $_POST['hours-text'] != null && $_POST['hours-text'] != "" &&
                 $_POST['found-game'] != null && $_POST['found-game'] != "" &&

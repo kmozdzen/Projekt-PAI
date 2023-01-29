@@ -27,6 +27,7 @@ main
     gap: 5em;
 
     margin-right: 2.5em;
+    margin-bottom: 1em;
 }
 
 .list > ul > li
@@ -85,8 +86,11 @@ main
 
 .block > img
 {
-    width: 7vw;
+    width: 160px;
+    height: 120px;
     border-radius: 10px;
+
+    margin-right: 5em;
 }
 
 .game-name
@@ -96,7 +100,6 @@ main
 
     width: 50%;
     margin: auto;
-    margin-left: 5em;
     padding: 1em;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
@@ -162,6 +165,7 @@ main
     {
         width: 50%;
         font-size: 0.6em;
+        margin-left: 0.5em;
     }
 
     .rate

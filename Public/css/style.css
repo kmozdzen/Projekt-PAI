@@ -5,6 +5,7 @@ body
     font-weight: 600;
     margin: 0;
 
+
     overflow: visible;
 }
 
@@ -89,6 +90,13 @@ p
 .sign-in
 {
     margin-top: 2em;
+
+}
+
+.sign-in:hover
+{
+    cursor: pointer;
+    background-color: #14B727;
 }
 
 @media only screen and (max-device-width: 420px)
@@ -149,47 +157,40 @@ p
     overflow: auto;
 }
 
-nav
-{
-    z-index: 2;
-}
-
-nav > .hider
-{
-    position: fixed;
-    top: 0em;
-    left: 0;
-
-    width: 100vw;
-    height: 3em;
-    background: fixed;
-    
-}
-
 nav > .strap
 {
     position: fixed;
-    top: 52px;
+    margin-top: 50px;
     left: 0;
-
+    z-index: 1;
     width: 100%;
     background: #017801;
     border: 3px solid #000000;
 
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    border-left: none;
 
-    
+   /* display: flex;
+    align-items: center;
+    justify-content: flex-start;*/
+
+    border-left: none;
+    border-right: none;
+
+    transition: 0.3s transform ease-in-out;
 }
 
-nav > .strap > img
+.phone-container
 {
-    width: 20%;
-    min-width: 400px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+nav > .strap > .phone-container > img
+{
+    width: 20vw;
     margin: auto;
-    margin-left: 3em;
+    margin-left: 7em;
+    margin-right: 0px;
 }
 
 a
@@ -198,11 +199,44 @@ a
     display: block;
 }
 
-li i
+ul
+{
+    width: 60vw;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    margin-left: 2em;
+}
+
+.sett
+{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    width: 20vw;
+    text-align: center;
+}
+
+a > i
 {
     font-size: 3em;
-    margin-right: auto;
-    margin-right: 2em;
+
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+}
+
+a > i:hover,a > i:focus,a > i:active
+{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+    cursor: pointer;
 }
 
 .button
@@ -212,20 +246,23 @@ li i
 
     color: black;
     margin: auto;
-    margin-right: 10em;
     text-align: center;
     letter-spacing: 0.7px;
     padding: 0.9em;
-  
-    width: 40%;
+    padding-left: 4em;
+    padding-right: 4em;
+
+    font-weight: bold;
 }
+
 
 .setting-button
 {
     color: black;
+    margin: auto;
 }
 
-nav > .strap > ul
+nav > .strap > .phone-container > ul
 {
     list-style: none;
     display: flex;
@@ -237,39 +274,149 @@ nav > .strap > ul
 
 li a:hover:not(.active) 
 {
-    background-color: white;
+    background-color: #14B727;
 }
+
 
 .list-icon > i
 {
     display: none;
 }
 
-   @media only screen and (max-device-width: 420px)
+
+.register-button
 {
+    border: 3px solid #000000;
+    border-radius: 30px;
+    background: none;
+
+    color: black;
+    margin: auto;
+    text-align: center;
+    letter-spacing: 0.7px;
+    padding: 0.9em;
+    padding-left: 7em;
+    padding-right: 7em;
+
+    font-size: 80%;
+    font-weight: bold;
+}
+
+.register-button:hover
+{
+    cursor: pointer;
+    background-color: #14B727;
+}
+
+.button-icon
+{
+    background: none;
+    width: 70%;
+    color: black;
+    display: none;
+}
 
 
-    nav > .strap > img
+@media only screen and (min-width: 421px) and (max-width: 1100px)
+{
+    .button {
+        display: none;
+        padding-left: 0.1em;
+        padding-right: 0.1em;
+    }
+
+    .button-icon
+    {
+        display: flex;
+    }
+
+    .sett
+    {
+        text-align: center;
+    }
+
+    .setting-button
+    {
+        margin-right: 8vw;
+    }
+
+    .lis > li
+    {
+        margin: 0;
+    }
+}
+
+   @media only screen and (max-device-width: 420px)
+   {
+
+    .button-icon
+    {
+        display: none;
+    }
+
+    nav > .strap > .phone-container > img
     {
         width: 50vw;
-        margin: auto;
+        margin-top: 2em;
+        margin-left: 4em;
     }
 
     .button
     {
         display: none;
+        font-size: 70%;
+        padding: 0.5em 2em;
+
     }
 
-    .setting-button
-    {
-        display: none;
-    }
+   .phone-container
+   {
+       margin-bottom: 1em;
+   }
+
+   .strap > .phone-container > ul
+   {
+       list-style-type:none;
+       display:flex;
+       justify-content: center;
+       margin: auto;
+       margin-right: 0px;
+   }
+   .strap > .phone-container > ul > li
+
+   {
+       display: none;
+       margin-top: 1em;
+       width: 60%;
+       margin-left: 5em;
+   }
+
+   .setting-button
+   {
+       display: none;
+       margin-top: 1em;
+       margin-left: 28em;
+   }
 
     .list-icon > i
     {
         font-size: 2em;
         display: block;
         margin-left: 0.5em;
+    }
+
+    .phone-container
+    {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .register-button
+    {
+        padding: 1.1em 1.5em;
+        border-radius: 50px;
+        border: 4px solid #000000;
     }
 
 }

@@ -7,6 +7,8 @@
         <script src="https://kit.fontawesome.com/3ff5952e8a.js" crossorigin="anonymous"></script>
         <script src="Public/js/addUser.js" type="text/javascript" defer></script>
         <script src="Public/js/statistics.js" type="text/javascript" defer></script>
+        <script src="Public/js/fieldUser.js" type="text/javascript" defer></script>
+        <script src="Public/js/list.js" type="text/javascript" defer></script>
 
     </head>
     <body>
@@ -27,9 +29,9 @@
                                     </datalist>
                                 </div>
                                 <div class="icons">
-                                    <button><i class="fa-solid fa-xmark"></i></button>
+                                    <i class="fa-solid fa-xmark"></i>
                                     <hr/>
-                                    <button class="plus"><i class="fa-solid fa-plus"></i></button>
+                                    <button><i class="fa-solid fa-plus"></i></button>
                                 </div>
                             </div>
                     </header>

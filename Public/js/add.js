@@ -3,6 +3,7 @@ const button = document.querySelector(".fa-plus");
 const gameToAdd = document.getElementById("found-game");
 const img = document.getElementById("game-img");
 const gameContainer = document.getElementById("game");
+const games = document.getElementById("scripts");
 
 
 button.addEventListener("click", addGame);
@@ -10,7 +11,12 @@ button.addEventListener("click", addGame);
 function addGame(){
     const data= {add: add.value};
 
-    gameToAdd.value = add.value;
+    for(let i = 0; i < games.options.length; i++){
+        if(add.value == games.options[i].value){
+            gameToAdd.value = add.value;
+            break;
+        }
+    }
 
     /*fetch(`/add`, {
         method: "POST",

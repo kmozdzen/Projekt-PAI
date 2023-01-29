@@ -1,12 +1,13 @@
 main
 {
     position: relative;
-    top: 20vh;
+    top: 30vh;
     width: 100vw;
 }
 
 main > ul
 {
+    width: 100%;
     list-style: none;
     display: flex;
     flex-direction: column;
@@ -14,6 +15,11 @@ main > ul
     text-align: center;
 }
 
+li
+{
+    margin: auto;
+    padding-right: 5%;
+}
 
 .stats
 {
@@ -30,7 +36,6 @@ main > ul
     align-items: center;
     text-align: center;
 
-    margin-left: 25%;
     margin-top: 2%;
 }
 
@@ -87,6 +92,12 @@ hr
     {
         text-align: center;
         list-style-position: inside;
+        margin-bottom: 2%;
+    }
+
+    li
+    {
+        padding-right: 17%;
     }
 
     .stats

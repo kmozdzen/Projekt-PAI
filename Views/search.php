@@ -6,6 +6,7 @@
         <title>YourGameBook</title>
         <script src="https://kit.fontawesome.com/3ff5952e8a.js" crossorigin="anonymous"></script>
         <script src="Public/js/add.js" type="text/javascript" defer></script>
+        <script src="Public/js/field.js" type="text/javascript" defer></script>
     </head>
     <body>
         <div class="base-container">
@@ -24,7 +25,7 @@
                             <?php endforeach; ?>
                         </datalist>
                         <div class="icons">
-                            <button><i class="fa-solid fa-xmark"></i></button>
+                            <i class="fa-solid fa-xmark"></i>
                             <hr/>
                             <i class="fa-solid fa-plus"></i>
                         </div>    
@@ -39,8 +40,7 @@
                         <div id="add">
                                 <p id="rating">
                                     Rating:
-                                    <input name="rating-text" id="rating-text" type="number" value="0">
-                                    <!--<select id="rating-text">
+                                    <select name="rating-text" class="rating-text">
                                         <option>1</option>
                                         <option>2</option>
                                         <option>3</option>
@@ -51,17 +51,33 @@
                                         <option>8</option>
                                         <option>9</option>
                                         <option>10</option>
-                                    </select>-->
+                                    </select>
                                 </p>
                                 <p id="hours-played">
                                     Hours played:
-                                    <input name="hours-text" id="hours-text" type="number" min="0" value="0">
+                                    <input name="hours-text" class="hours-text" type="number" min="0" value="0">
                                 </p>
                                 <button><i class="fa-solid fa-circle-plus"></i></button>
                         </div>
                     </form>
                 </section>
             </main>
+        </div>
+        <div class="phone-nav">
+            <ul>
+                <li>
+                    <a href="search" class="button-icon"><i class="fa-solid fa-plus"></i></a>
+                </li>
+                <li>
+                    <a href="mylist" class="button-icon"><i class="fa-solid fa-table-list"></i></a>
+                </li>
+                <li>
+                    <a href="statistics" class="button-icon"><i class="fa-solid fa-layer-group"></i></a>
+                </li>
+                <li>
+                    <a href="users" class="button-icon"><i class="fa-solid fa-user"></i></a>
+                </li>
+            </ul>
         </div>
     </body>
 </html>
