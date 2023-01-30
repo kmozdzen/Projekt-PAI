@@ -27,7 +27,7 @@
                         <div class="icons">
                             <i class="fa-solid fa-xmark"></i>
                             <hr/>
-                            <i class="fa-solid fa-plus"></i>
+                            <i id="add-plus" class="fa-solid fa-plus"></i>
                         </div>    
                     </div>
                 </header>

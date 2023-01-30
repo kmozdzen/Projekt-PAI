@@ -1,30 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c860e711-a967-49d5-961d-4e13d6f3c792" name="Changes" comment="settings, session">
-      <change afterPath="$PROJECT_DIR$/Public/css/register.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Public/js/field.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Public/js/fieldUser.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Public/js/list.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/nav-phone.php" afterDir="false" />
+    <list default="true" id="c860e711-a967-49d5-961d-4e13d6f3c792" name="Changes" comment="visual changes">
+      <change afterPath="$PROJECT_DIR$/Public/css/admin.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Public/js/admin-remove.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Views/admin.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controllers/AdminController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Public/css/mylist.css" beforeDir="false" afterPath="$PROJECT_DIR$/Public/css/mylist.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Public/css/search.css" beforeDir="false" afterPath="$PROJECT_DIR$/Public/css/search.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Public/css/settings.css" beforeDir="false" afterPath="$PROJECT_DIR$/Public/css/settings.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Public/css/statistics.css" beforeDir="false" afterPath="$PROJECT_DIR$/Public/css/statistics.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Public/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Public/css/users.css" beforeDir="false" afterPath="$PROJECT_DIR$/Public/css/users.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Public/js/add.js" beforeDir="false" afterPath="$PROJECT_DIR$/Public/js/add.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Public/js/addUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/Public/js/addUser.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/mylist.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/mylist.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/nav.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/nav.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Routing.php" beforeDir="false" afterPath="$PROJECT_DIR$/Routing.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/search.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/search.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/settings.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/settings.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/statistics.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/statistics.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/users.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/users.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/MylistController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/MylistController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/SecurityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/UserRepository.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +96,8 @@
       <workItem from="1674476885019" duration="21787000" />
       <workItem from="1674740158198" duration="11619000" />
       <workItem from="1674827624268" duration="3821000" />
-      <workItem from="1674994217766" duration="2307000" />
+      <workItem from="1674994217766" duration="18200000" />
+      <workItem from="1675073244574" duration="1678000" />
     </task>
     <task id="LOCAL-00001" summary="added User">
       <created>1668507390303</created>
@@ -164,7 +155,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674424808266</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="visual changes">
+      <created>1674996609081</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1674996609081</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -190,6 +188,7 @@
     <MESSAGE value="statistics good, users not good yet" />
     <MESSAGE value="statistics, profile likes" />
     <MESSAGE value="settings, session" />
-    <option name="LAST_COMMIT_MESSAGE" value="settings, session" />
+    <MESSAGE value="visual changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="visual changes" />
   </component>
 </project>

@@ -22,7 +22,7 @@ class SecurityController extends AppController
         }
 
         $email = $_POST['email'];
-        $password = md5($_POST['password']);
+        $password = $_POST['password'];
 
         $user = $this->userRepository->getUser($email);
 
@@ -34,14 +34,20 @@ class SecurityController extends AppController
             return $this->render('login', ['messages' => ['User with this email not exist!']]);
         }
 
-        if ($user->getPassword() !== $password) {
+        if (!password_verify($password, $user->getPassword())) {
             return $this->render('login', ['messages' => ['Wrong password!']]);
         }
 
         $this->cookieRepository->createUserSession($user->getId());
 
         $url = "http://$_SERVER[HTTP_HOST]";
-        header("Location: {$url}/search");
+
+        if($user->getRole() == "admin"){
+            header("Location: {$url}/admin");
+        }else
+        {
+            header("Location: {$url}/search");
+        }
     }
 
     public function register()
@@ -67,7 +73,7 @@ class SecurityController extends AppController
             return $this->render('register', ['messages' => ['Please provide proper password']]);
         }
 
-        $user = new User($email, md5($password), $name, $surname);
+        $user = new User($email, password_hash($password, PASSWORD_BCRYPT), $name, $surname);
         $user->setPhone($phone);
 
         $this->userRepository->addUser($user);

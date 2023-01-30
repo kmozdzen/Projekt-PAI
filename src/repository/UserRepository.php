@@ -8,10 +8,13 @@ require_once __DIR__.'/../models/Stats.php';
 class UserRepository extends Repository
 {
 
+    /**
+     * @throws Exception
+     */
     public function getUser(string $email): ?User
     {
         $stmt = $this->database->connect()->prepare('
-            SELECT u.id, name, surname, email, password FROM users u JOIN users_details ud 
+            SELECT u.id, name, surname, email, password, id_role FROM users u JOIN users_details ud 
             ON u.id_user_details = ud.id WHERE email = :email
         ');
         $stmt->bindParam(':email', $email, PDO::PARAM_STR);
@@ -19,19 +22,30 @@ class UserRepository extends Repository
 
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if ($user == false) {
-            return null;
+        if (!$user) {
+            throw new Exception("User not found");
         }
 
         $u = new User(
             $user['email'],
             $user['password'],
             $user['name'],
-            $user['surname']);
+            $user['surname'],
+            $this->getRole($user['id_role']));
 
         $u->setId($user['id']);
 
         return $u;
+    }
+
+    public function getRole(int $id): string
+    {
+        $stmt = $this->database->connect()->prepare('
+            SELECT name FROM role WHERE id = :id
+        ');
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetchColumn();
     }
 
     public function addUser(User $user)
@@ -62,8 +76,8 @@ class UserRepository extends Repository
         ]);
 
         $stmt = $this->database->connect()->prepare('
-            INSERT INTO users (email, password, id_user_details, id_statistics)
-            VALUES (?, ?, ?, ?)
+            INSERT INTO users (email, password, id_user_details, id_statistics, id_role)
+            VALUES (?, ?, ?, ?, ?)
         ');
 
         $stmt->execute([
@@ -71,7 +85,18 @@ class UserRepository extends Repository
             $user->getPassword(),
             $this->getUserDetailsId($user),
             $this->getStatsId($stats),
+            $this->getIdRole($user->getRole())
         ]);
+    }
+
+    public function getIdRole(string $name): int
+    {
+        $stmt = $this->database->connect()->prepare('
+            SELECT id FROM role WHERE name = :name
+        ');
+        $stmt->bindParam(':name', $name);
+        $stmt->execute();
+        return $stmt->fetchColumn();
     }
 
     public function getUserDetailsId(User $user): int
@@ -108,17 +133,20 @@ class UserRepository extends Repository
         $result = [];
 
         $stmt = $this->database->connect()->prepare('
-            SELECT * FROM users
+            SELECT u.id, email, password, name, surname FROM users u JOIN users_details ud on u.id_user_details = ud.id WHERE id_role = 2
         ');
         $stmt->execute();
         $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        foreach ($users as $user){
-            $result[] = new User(
+        foreach ($users as $user) {
+            $u = new User(
                 $user['email'],
                 $user['password'],
-                '',''
+                $user['name'],
+                $user['surname']
             );
+            $u->setId($user['id']);
+            $result[] = $u;
         }
 
         return $result;
@@ -269,5 +297,13 @@ class UserRepository extends Repository
     private function validate(string $place): bool
     {
         return $place == NULL || $place == "" || strlen($place) > 64;
+    }
+
+    public function remove($id){
+        $stmt = $this->database->connect()->prepare('
+            DELETE FROM users WHERE id = :id;
+        ');
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
     }
 }

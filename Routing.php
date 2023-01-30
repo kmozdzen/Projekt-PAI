@@ -6,6 +6,7 @@ require_once 'src/controllers/MylistController.php';
 require_once 'src/controllers/GamesController.php';
 require_once 'src/controllers/UsersController.php';
 require_once 'src/controllers/StatController.php';
+require_once 'src/controllers/AdminController.php';
 
 class Routing{
     public static $routes;

@@ -160,7 +160,7 @@ p
 nav > .strap
 {
     position: fixed;
-    margin-top: 50px;
+    top: 0;
     left: 0;
     z-index: 1;
     width: 100%;
