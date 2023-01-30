@@ -72,30 +72,28 @@ class MylistRepository extends Repository
         ]);
 
         $stmt = $this->database->connect()->prepare('
-            SELECT * FROM statistics WHERE id = :idStats
+            SELECT count(id) allgames, sum(rating) averagerating, sum(hours_played) hoursplayed FROM my_list WHERE id_user = :id;
         ');
-        $stmt->bindParam(':idStats', $idStats, PDO::PARAM_INT);
+        $stmt->bindParam(':id', $idUser, PDO::PARAM_INT);
         $stmt->execute();
         $stats = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         $s = new Stats(0 ,0 , 0, 0);
         foreach ($stats as $stat){
-            $s->setAllGames($stat['all_games']);
-            $s->setAverageRating($stat['average_rating']);
-            $s->setHoursPlayed($stat['hours_played']);
+            $s->setAllGames($stat['allgames']);
+            $s->setAverageRating($stat['averagerating']);
+            $s->setHoursPlayed($stat['hoursplayed']);
         }
 
-        $updatedAllGames = $s->getAllGames() + 1;
-        $updatedAverageRating= ($s->getAverageRating() * $s->getAllGames() + $game->getRating()) / ($s->getAllGames() + 1);
-        $updatedHoursPlayed= $s->getHoursPlayed() + $game->getHoursPlayed();
+        $updatedAverageRating= $s->getAverageRating() / $s->getAllGames();
 
         $stmt = $this->database->connect()->prepare('
             UPDATE statistics SET "all_games" = :all_games, "average_rating" = :average_rating, "hours_played" = :hours_played WHERE id = :idStats;
         ');
 
-        $stmt->bindParam(':all_games', $updatedAllGames, PDO::PARAM_INT);
+        $stmt->bindParam(':all_games', $s->getAllGames(),  PDO::PARAM_INT);
         $stmt->bindParam(':average_rating', $updatedAverageRating, PDO::PARAM_INT);
-        $stmt->bindParam(':hours_played', $updatedHoursPlayed, PDO::PARAM_INT);
+        $stmt->bindParam(':hours_played', $s->getHoursPlayed(), PDO::PARAM_INT);
         $stmt->bindParam(':idStats', $idStats, PDO::PARAM_INT);
 
         $stmt->execute();
@@ -122,14 +120,6 @@ class MylistRepository extends Repository
         }
 
         return $result;
-    }
-
-    public function updateAllGames(){
-        $stmt = $this->database->connect()->prepare('
-            UPDATE statistics SET "all_games" = "all_games" + 1;
-        ');
-
-        $stmt->execute();
     }
 
 }

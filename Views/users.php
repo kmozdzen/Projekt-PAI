@@ -8,8 +8,6 @@
         <script src="Public/js/addUser.js" type="text/javascript" defer></script>
         <script src="Public/js/statistics.js" type="text/javascript" defer></script>
         <script src="Public/js/fieldUser.js" type="text/javascript" defer></script>
-        <script src="Public/js/list.js" type="text/javascript" defer></script>
-
     </head>
     <body>
         <div class="base-container">
@@ -17,56 +15,52 @@
                 <?php include('nav.php')?>
             </nav>
             <main>
-                <form action="getUserStats" method="POST" ENCTYPE="multipart/form-data">
-                    <header>
-                            <div class="user-container">
-                                <div class="typing-place">
-                                    <input name="show-user" type="text" placeholder="Search for users" list="scripts">
-                                    <datalist id="scripts">
-                                        <?php foreach ($users as $user): ?>
-                                            <option><?= $user->getEmail(); ?></option>
-                                        <?php endforeach; ?>
-                                    </datalist>
-                                </div>
-                                <div class="icons">
-                                    <i class="fa-solid fa-xmark"></i>
-                                    <hr/>
-                                    <button><i class="fa-solid fa-plus"></i></button>
-                                </div>
+                <header>
+                        <div class="user-container">
+                            <div class="typing-place">
+                                <input name="show-user" type="text" placeholder="Search for users" list="scripts">
+                                <datalist id="scripts">
+                                    <?php foreach ($users as $user): ?>
+                                        <option><?= $user->getEmail(); ?></option>
+                                    <?php endforeach; ?>
+                                </datalist>
                             </div>
-                    </header>
-                    <section>
-                        <div class="user">
-                            <input id="user-name" name="user-name" readonly="readonly" value=<?php echo $name ?>>
-                            <i class="fa-solid fa-heart"></i>
-                            <p id="likes"><?php echo $likes ?></p>
+                            <div class="icons">
+                                <i class="fa-solid fa-xmark"></i>
+                                <hr/>
+                                <i id="user-serach-button" class="fa-solid fa-plus"></i>
+                            </div>
                         </div>
-                        <div class="best-games">
-                            <h2>Best games</h2>
-                            <ul>
-                                <?php $nr = 1 ?>
-                                <?php
-                                $a = 5;
-                                if($result != null)
-                                foreach ($result as $game): ?>
-                                <li>
-                                    <div class="l_position">
-                                        <div class="number">
-                                            <p><?php echo $nr++?></p>
-                                        </div>
-                                        <div class="block">
-                                            <img src= "Public/img/<?=$game->getImage();?>" >
-                                            <p class="game-name"><?=$game->getTitle();?></p>
-                                            <p class="rate"><?=$game->getRating();?></p>
-                                        </div>
-                                    </div>
-                                </li>
-                                <?php endforeach; ?>
-                            </ul>
+                </header>
+                <section>
+                    <div class="user">
+                        <input id="user-name" name="user-name" readonly="readonly" value=<?php echo $name ?>>
+                        <i class="fa-solid fa-heart"></i>
+                        <p id="likes"></p>
+                    </div>
+                    <div class="best-games">
+                        <h2>Best games</h2>
+                        <div class="game-list">
                         </div>
-                    </section>
-                </form>
+                    </div>
+                </section>
             </main>
         </div>
+        <?php include('nav-phone.php') ?>
     </body>
 </html>
+
+<template id="games-element-template">
+    <div class="game-list">
+        <div class="l_position">
+            <div class="number">
+                <p class="number-p"></p>
+            </div>
+            <div class="block">
+                <img src="">
+                <p class="game-name">game name</p>
+                <p class="rate">rate</p>
+            </div>
+        </div>
+    </div>
+</template>

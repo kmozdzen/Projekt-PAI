@@ -1,7 +1,4 @@
 <div class="strap">
-    <div class="list-icon">
-        <i class="fa-solid fa-list"></i>
-    </div>
     <div class="phone-container">
         <img src="Public/img/logo.svg">
         <ul id="lis">

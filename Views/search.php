@@ -55,7 +55,7 @@
                                 </p>
                                 <p id="hours-played">
                                     Hours played:
-                                    <input name="hours-text" class="hours-text" type="number" min="0" value="0">
+                                    <input name="hours-text" class="hours-text" type="number" min="0" max="10000" value="0" onkeyup="if(value<0) value=0;if(value>10000) value=10000;">
                                 </p>
                                 <button><i class="fa-solid fa-circle-plus"></i></button>
                         </div>
@@ -63,22 +63,7 @@
                 </section>
             </main>
         </div>
-        <div class="phone-nav">
-            <ul>
-                <li>
-                    <a href="search" class="button-icon"><i class="fa-solid fa-plus"></i></a>
-                </li>
-                <li>
-                    <a href="mylist" class="button-icon"><i class="fa-solid fa-table-list"></i></a>
-                </li>
-                <li>
-                    <a href="statistics" class="button-icon"><i class="fa-solid fa-layer-group"></i></a>
-                </li>
-                <li>
-                    <a href="users" class="button-icon"><i class="fa-solid fa-user"></i></a>
-                </li>
-            </ul>
-        </div>
+        <?php include('nav-phone.php') ?>
     </body>
 </html>
 

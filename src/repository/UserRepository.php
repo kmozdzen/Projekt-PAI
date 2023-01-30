@@ -26,6 +26,7 @@ class UserRepository extends Repository
             throw new Exception("User not found");
         }
 
+
         $u = new User(
             $user['email'],
             $user['password'],
@@ -164,38 +165,14 @@ class UserRepository extends Repository
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function getUserStats($user_name) : array
+    public function getUserStats(string $user_name)
     {
-        $result = [];
-
-       /* $stmt = $this->database->connect()->prepare('
-            SELECT * FROM statistics WHERE id = (SELECT id_statistics FROM users WHERE email = :user_name)
-        ');
-        $stmt->bindParam(':user_name', $user_name, PDO::PARAM_STR);
-        $stmt->execute();
-        $stats = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-        foreach ($stats as $stat){
-            $result[] = $stat['your_likes'];
-        }*/
-
         $stmt = $this->database->connect()->prepare('
             SELECT * FROM my_list_view WHERE id_user = (SELECT id FROM users WHERE email = :user_name) ORDER BY -rating LIMIT 3
         ');
         $stmt->bindParam(':user_name', $user_name, PDO::PARAM_STR);
         $stmt->execute();
-        $games = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-        foreach ($games as $game){
-            $g = new Game(
-                $game['title'],
-                $game['rating'],
-            );
-            $g->setImage($game['image']);
-
-            $result[] = $g;
-        }
-        return $result;
+        return  $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function getLikes($user_name){

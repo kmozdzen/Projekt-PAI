@@ -13,12 +13,13 @@ main > ul
     flex-direction: column;
     justify-content: center;
     text-align: center;
+
+    padding: 0;
 }
 
 li
 {
     margin: auto;
-    padding-right: 5%;
 }
 
 .stats
@@ -80,6 +81,7 @@ hr
     margin: auto;
     color: red;
 }
+
 
 @media only screen and (max-device-width: 420px)
 {

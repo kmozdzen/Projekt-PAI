@@ -45,12 +45,13 @@ class UsersController extends AppController
     public function getUserStats()
     {
         $this->isAuthorized();
-        if($this->isPost()) {
-            $user_name = $_POST['show-user'];
-
-            $result = $this->userRepository->getUserStats($user_name);
-            $likes = $this->userRepository->getLikes($user_name);
-            $this->render('users', ['result' => $result, 'likes' => $likes, 'name' => $user_name]);
+        $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
+        if ($contentType === "application/json") {
+            $content = trim(file_get_contents("php://input"));
+            $decoded = json_decode($content, true);
+            header('Content-type: application/json');
+            http_response_code(200);
+            echo json_encode($this->userRepository->getUserStats($decoded['add']));
         }
     }
 
@@ -73,8 +74,7 @@ class UsersController extends AppController
             return $this->render('settings', ['messages' => ['Please provide proper password'], 'user' => $oldUser]);
         }
 
-        //TODO try to use better hash function
-        $user = new User($email, md5($password), $name, $surname);
+        $user = new User($email, password_hash($password, PASSWORD_BCRYPT), $name, $surname);
         $user->setPhone($phone);
 
         $this->userRepository->changeData($user, $id);
