@@ -1,0 +1,70 @@
+.logo > img
+{
+    width: 50%;
+}
+
+.register-panel
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 1em;
+}
+
+.register-button
+{
+    border: 3px solid #000000;
+    border-radius: 30px;
+    background: none;
+
+    color: black;
+    margin: auto;
+    text-align: center;
+    letter-spacing: 0.7px;
+    padding: 0.9em;
+    padding-left: 7em;
+    padding-right: 7em;
+
+    font-size: 80%;
+    font-weight: bold;
+}
+
+.register-button:hover
+{
+    background-color: #14B727;
+    cursor: pointer;
+}
+
+.register-panel>input
+{
+    background: #7FFF7F;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    border-radius: 20px;
+
+    width: 70%;
+    margin: 1%;
+    padding: 2.5em;
+
+}
+
+@media only screen and (max-device-width: 420px)
+{
+    .register-panel>input
+    {
+        border-radius: 40px;
+    }
+
+    .logo > img
+    {
+        width: 80%;
+    }
+
+    .register-button
+    {
+        border-radius: 60px;
+        border: 6px solid #000000;
+    }
+
+}

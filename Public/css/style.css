@@ -1,0 +1,440 @@
+body
+{
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    margin: 0;
+
+
+    overflow: visible;
+}
+
+span
+{
+    font-weight: 600;
+}
+
+.container
+{
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(180deg, #00FF00 0%, #006600 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+img
+{
+    width: 80%;
+}
+.logo
+{
+    width: 50%;
+    text-align: center;
+}
+
+.login-container
+{
+    width: 50%;
+}
+
+form.login
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.login>button
+{
+    border: 3px solid #000000;
+    border-radius: 30px;
+
+    width: 25%;
+    background: 0%;
+    margin: 1%;
+    line-height: 2em;
+    padding: 0.5em;
+}
+
+
+.login-container>form>input
+{
+    background: #7FFF7F;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    border-radius: 20px;
+
+    width: 40%;
+    margin: 1%;
+    padding: 2.5em;
+
+}
+
+.input-names
+{
+    margin: 0;
+    margin-top: 3%;
+}
+
+p
+{
+    font-size: 120%;
+}
+
+.sign-in
+{
+    margin-top: 2em;
+
+}
+
+.sign-in:hover
+{
+    cursor: pointer;
+    background-color: #14B727;
+}
+
+@media only screen and (max-device-width: 420px)
+{
+    *
+    {
+        font-size: 36px;
+    }
+
+    .logo
+    {
+        width: 80%;
+    }
+
+    .login-container
+    {
+        width: 100%;
+    }
+
+    form
+    {
+        margin: auto;
+    }
+
+    img
+    {
+        width: 100%;
+        margin: auto;
+        margin-top: 10%;
+    }
+
+    .login-container
+    {
+        margin-top: 4em;
+    }
+
+    .login-container>form>input
+    {
+        border-radius: 40px;
+    } 
+
+    .login>button
+    {
+        border: 4px solid #000000;
+        border-radius: 50px;
+    }
+
+}
+.base-container
+{
+    background: linear-gradient(180deg, #00FF00 0%, #006600 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+
+    overflow: auto;
+}
+
+nav > .strap
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    background: #017801;
+    border: 3px solid #000000;
+
+    border-left: none;
+    border-right: none;
+
+    transition: 0.3s transform ease-in-out;
+}
+
+.phone-container
+{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+nav > .strap > .phone-container > img
+{
+    width: 20vw;
+    margin: auto;
+    margin-left: 7em;
+    margin-right: 0px;
+}
+
+a
+{
+    text-decoration: none;
+    display: block;
+}
+
+ul
+{
+    width: 60vw;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    margin-left: 2em;
+}
+
+.sett
+{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    width: 20vw;
+    text-align: center;
+}
+
+a > i
+{
+    font-size: 3em;
+
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+}
+
+a > i:hover,a > i:focus,a > i:active
+{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+    cursor: pointer;
+}
+
+.button
+{
+    border: 3px solid #000000;
+    border-radius: 30px;
+
+    color: black;
+    margin: auto;
+    text-align: center;
+    letter-spacing: 0.7px;
+    padding: 0.9em;
+    padding-left: 4em;
+    padding-right: 4em;
+
+    font-weight: bold;
+}
+
+
+.setting-button
+{
+    color: black;
+    margin: auto;
+}
+
+nav > .strap > .phone-container > ul
+{
+    list-style: none;
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+
+    letter-spacing: 0.7px;
+}
+
+li a:hover:not(.active) 
+{
+    background-color: #14B727;
+}
+
+
+
+
+.register-button
+{
+    border: 3px solid #000000;
+    border-radius: 30px;
+    background: none;
+
+    color: black;
+    margin: auto;
+    text-align: center;
+    letter-spacing: 0.7px;
+    padding: 0.9em;
+    padding-left: 7em;
+    padding-right: 7em;
+
+    font-size: 80%;
+    font-weight: bold;
+}
+
+.register-button:hover
+{
+    cursor: pointer;
+    background-color: #14B727;
+}
+
+.button-icon
+{
+    background: none;
+    width: 70%;
+    color: black;
+    display: none;
+}
+
+.phone-nav
+{
+    position: fixed;
+    top: 90vh;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 10vh;
+    background: #017801;
+    border: 3px solid #000000;
+
+    border-left: none;
+    border-right: none;
+
+    transition: 0.3s transform ease-in-out;
+
+    display: none;
+    justify-content: center;
+    text-align: center;
+}
+
+.phone-nav > ul
+{
+    width: 80vw;
+    padding:0;
+    list-style: none;
+    margin: auto;
+}
+
+.phone-button-icon
+{
+    color: black;
+}
+
+
+@media only screen and (min-width: 421px) and (max-width: 1100px)
+{
+    .button {
+        display: none;
+        padding-left: 0.1em;
+        padding-right: 0.1em;
+    }
+
+    .button-icon
+    {
+        display: flex;
+    }
+
+    .sett
+    {
+        text-align: center;
+    }
+
+    .setting-button
+    {
+        margin-right: 8vw;
+    }
+
+    .lis > li
+    {
+        margin: 0;
+    }
+}
+
+   @media only screen and (max-device-width: 420px)
+   {
+
+    .button-icon
+    {
+        display: none;
+    }
+
+    nav > .strap > .phone-container > img
+    {
+        width: 50%;
+        margin:auto;
+        margin-left: 4em;
+        margin-top: 1em;
+    }
+
+    .button
+    {
+        display: none;
+        font-size: 70%;
+        padding: 0.5em 2em;
+
+    }
+
+   .phone-nav
+   {
+       display: flex;
+   }
+
+   .phone-container
+   {
+       margin-bottom: 1em;
+   }
+
+   .strap > .phone-container > ul
+   {
+       display:none;
+   }
+
+   .sett
+   {
+       display: flex;
+       justify-content: center;
+       text-align: center;
+       margin-top: 1em;
+       margin-right: 2em;
+   }
+
+   .setting-button
+   {
+       margin: auto;
+   }
+
+    .register-button
+    {
+        padding: 1.1em 1.5em;
+        border-radius: 50px;
+        border: 4px solid #000000;
+    }
+
+}
+.no-valid
+{
+    border: 4px solid red;
+    box-shadow: 0 0 0.2em red;
+    outline: none;
+}

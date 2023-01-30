@@ -1,0 +1,301 @@
+main
+{
+    position: relative;
+    top: 30vh;
+}
+
+.search-container
+{
+    width: 100%;
+    min-width: 50vw;
+    background: #7FFF7F;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+}
+
+.search-container>input
+{
+    background: none;
+    border: none;
+    padding: 2.5em;
+
+    width: 100%;
+    height: 4vh;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+.search-container>.icons>i
+{
+    font-size: 1.5em;
+    margin: auto;
+
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+}
+
+.search-container>.icons>i:hover, .search-container>.icons>i:focus, .search-container>.icons>i:active {
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+    cursor: pointer;
+}
+
+
+.search-container>.icons
+{
+    margin: auto;
+    margin-right: 2em;
+
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+}
+
+.icons > hr
+{
+    border: 1px solid black;
+    height: 6vh;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+section
+{
+    margin-top: 8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.add-game > form > #game
+{   
+
+    background: rgba(10, 0, 0, 0.78);
+    border-radius: 10px;
+    width: auto;
+    min-width: 40vw;
+    display: flex;
+    justify-content: flex-start;
+    text-align: center;
+
+    color: white;
+}
+
+
+.add-game > form > #game > img
+{
+    border-radius: 10px;
+    width: 7vw;
+    margin: 0;
+}
+.add-game > form > #game > input
+{
+    background: none;
+}
+.add-game > form > #game > #found-game
+{
+    font-weight: bold;
+    border: 3px solid #FFFFFF;
+    border-radius: 30px;
+    color: white;
+    margin: auto;
+    padding: 0.4em;
+
+    text-align: center;
+    font-size: 2em;
+
+    width: 60%;
+    margin: auto;
+}
+
+.add-game > form > #add
+{
+    background: rgba(10, 0, 0, 0.78);
+    border-radius: 10px;
+
+    width: auto;
+    min-width: 40vw;
+
+    margin-top: 3%;
+
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+
+    color: white;
+}
+#add > button
+{
+    background: none;
+    border: none;
+}
+
+#add > button > i
+{
+    color: #4BAE4F;
+    font-size: 2em;
+    margin: auto 1.5em;
+
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+}
+
+#add > button > i:hover, #add > button > i:focus, #add > button > i:active
+{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+    cursor: pointer;
+}
+
+{
+    cursor: pointer;
+
+}
+
+#rating
+{
+    margin-left: 6em;
+}
+
+.rating-text
+{
+    font-weight: bold;
+    background: #7FFF7F;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    padding: 0.5em;
+}
+
+.hours-text
+{
+    font-weight: bold;
+    background: #7FFF7F;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    text-align: center;
+    padding: 0.5em;
+}
+
+@media only screen and (max-device-width: 420px)
+{
+    main
+    {
+        top: 20vh;
+    }
+
+    .search-container
+    {
+        width: 80%;
+        min-width: 50vw;
+
+        border-radius: 40px;
+        margin: auto;
+    }
+
+    .search-container>.icons
+    {
+        margin-right: 0.5em;
+    }
+
+    .icons>button>i
+    {
+        font-size: 1.5em;
+    }
+
+    .icons > hr
+    {
+        border: 2px solid black;
+    }
+
+    section
+    {
+        margin-top: 25%;
+    }
+
+    .add-game > form > #game
+    {   
+        width: 80%;
+        border-radius: 30px;
+
+        margin: auto;
+    }
+
+
+    .add-game > form > #game > img
+    {
+        border-radius: 30px;
+        width: 20vw;
+    }
+
+    .add-game > form > #game > #found-game
+    {
+        font-weight: bold;
+        border: 3px solid #FFFFFF;
+        border-radius: 30px;
+        color: white;
+        margin: auto;
+        padding: 0.4em;
+
+        text-align: center;
+        font-size: 1em;
+
+        width: 40%;
+        margin: auto;
+    }
+
+
+    .add-game > form > #add
+    {
+        border-radius: 30px;
+        width: 80%;
+        margin: auto;
+        margin-top: 3%;
+    }
+
+    #add > i
+    {
+        font-size: 1.7em;
+        margin: auto;
+        margin-left: 0;
+        margin-right: 0.5em;
+    }
+
+    #rating, #hours-played
+    {
+        font-size: 0.8em;
+    }
+
+    #rating
+    {
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+
+    #hours-played > input
+    {
+        width: 80%;
+    }
+}

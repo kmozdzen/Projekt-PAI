@@ -1,0 +1,141 @@
+main
+{
+    /*position: relative;
+    top: 70vh;
+    width: 100vw;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-top: 15%;
+    margin-bottom: 1%;
+
+    color: white;
+    gap: 2em;
+}
+
+.logout
+{
+    color: black;
+    border: 3px solid #000000;
+    border-radius: 30px;
+
+    background: 0%;
+    margin: auto;
+    line-height: 2em;
+    padding: 0.5em;
+    padding-left: 2em;
+    padding-right: 2em;
+    font-weight: bold;
+}
+
+.logout:hover
+{
+   cursor: pointer;
+    background-color: #14B727;
+}
+
+.user-panel
+{
+    width: 70vw;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.user-panel > p > span {
+    color: #01FF01;
+}
+
+.user-change
+{
+    width: 50vw;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    margin: auto;
+}
+
+.user-change > .change-data
+{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 1em;
+}
+
+.user-change > .change-data > input
+{
+    background: #7FFF7F;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    border-radius: 20px;
+
+    width: 40%;
+    margin: auto;
+    padding: 2.5em;
+}
+.ok
+{
+    border: 3px solid white;
+    border-radius: 30px;
+
+    width: 25%;
+    background: 0%;
+    margin: auto;
+    line-height: 2em;
+    padding: 0.5em;
+
+    color: white;
+    font-weight: bold;
+}
+
+.ok:hover
+{
+    cursor: pointer;
+    background-color: #14B727;
+}
+
+@media only screen and (max-device-width: 420px)
+{
+    main
+    {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 100vh;
+    }
+    .user-change
+    {
+        width: 80vw;
+        border-radius: 20px;
+    }
+
+    .ok
+    {
+        border-radius: 40px;
+    }
+
+    .logout
+    {
+        border-radius: 40px;
+        border: 5px solid #000000;
+    }
+
+    .user-change > .change-data > input
+    {
+        border-radius: 30px;
+    }
+
+    .user-panel
+    {
+        border-radius: 20px;
+        gap: 0.5em;
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+
+}
