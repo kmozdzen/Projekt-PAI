@@ -2,8 +2,9 @@ YourGameBook
 
 Aplikacja polegająca na śledzeniu swoich rezultatów w grach komputerowych
 - pozwala na dodawanie gier, które się ukończyło,
-- dostęp do statystyk, liczba wszystkich gier, średni czas grania, średnia ocena gier, polubienia profilu
-- ocenianie produkcji w skali 1 - 10, tworząc przy tym ranking najlepszych gier.
+- dostęp do statystyk, liczba wszystkich gier, średni czas grania, średnia ocena gier, polubienia profilu,
+- ocenianie produkcji w skali 1 - 10, tworząc przy tym ranking najlepszych gier,
+- Możliwość zobaczenia ulubionych pozycji innych użytkowników oraz możliwość polubienia innego profilu.
 
 Technologie:
 HTML5, CSS, JavaScript, PHP, baza danych PostgreSQL
