@@ -74,7 +74,7 @@ class UsersController extends AppController
             return $this->render('settings', ['messages' => ['Please provide proper password'], 'user' => $oldUser]);
         }
 
-        $user = new User($email, password_hash($password, PASSWORD_BCRYPT), $name, $surname);
+        $user = new User($email, $password, $name, $surname);
         $user->setPhone($phone);
 
         $this->userRepository->changeData($user, $id);

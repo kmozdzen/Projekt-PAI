@@ -7,11 +7,13 @@ require_once __DIR__.'/../repository/MylistRepository.php';
 class MylistController extends AppController
 {
     private $mylistRepository;
+    private $gamesRepository;
 
     public function __construct()
     {
         parent::__construct();
         $this->mylistRepository = new MylistRepository();
+        $this->gamesRepository = new GamesRepository();
     }
 
     public function mylist()
@@ -25,10 +27,6 @@ class MylistController extends AppController
     {
         $id = $this->isAuthorized();
         if($this->isPost()){
-            echo $_POST['rating-text'];
-            echo $_POST['hours-text'];
-            echo $_POST['found-game'];
-
             if($_POST['rating-text'] != null && $_POST['rating-text'] != "" &&
                $_POST['hours-text'] != null && $_POST['hours-text'] != "" &&
                 $_POST['found-game'] != null && $_POST['found-game'] != "" &&
@@ -41,9 +39,13 @@ class MylistController extends AppController
                 $game = new Game($id_games, $rating);
                 $game->setHoursPlayed($hours_played);
                 $this->mylistRepository->addGame($game, $id);
-                $this->render('search');
-            }else{
-                $this->render("search");
+
+                $games = $this->gamesRepository->getGames($id);
+                $this->render('search', ['games' => $games]);
+            }else
+            {
+                $games = $this->gamesRepository->getGames($id);
+                $this->render('search', ['games' => $games]);
             }
         }
     }

@@ -13,9 +13,6 @@
         <?php include('nav.php')?>
     </nav>
     <main>
-        <?php
-/*            setcookie('email', '', time() - 1);
-        */?>
         <div class="user-panel">
             <p class="user-email">email:<span> <?php echo $user->getEmail() ?></span></p>
             <p class="user-name">name: <span><?php echo $user->getName() ?></span></p>

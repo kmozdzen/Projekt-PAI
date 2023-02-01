@@ -12,6 +12,42 @@ class StatRepository extends Repository
         $result = [];
 
         $stmt = $this->database->connect()->prepare('
+            SELECT count(id) allgames, sum(rating) averagerating, sum(hours_played) hoursplayed FROM my_list WHERE id_user = :id;
+        ');
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+        $stats = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        $s = new Stats(0 ,0 , 0, 0);
+        foreach ($stats as $stat){
+            $s->setAllGames($stat['allgames']);
+            if($stat['averagerating'] != null)
+                $s->setAverageRating($stat['averagerating']);
+            else
+                $s->setAverageRating(0);
+            if($stat['averagerating'] != null)
+                $s->setHoursPlayed($stat['hoursplayed']);
+            else
+                $s->setHoursPlayed(0);
+        }
+
+        if($s->getAllGames() != 0)
+            $updatedAverageRating= $s->getAverageRating() / $s->getAllGames();
+        else
+            $updatedAverageRating = 0;
+
+        $stmt = $this->database->connect()->prepare('
+            UPDATE statistics SET "all_games" = :all_games, "average_rating" = :average_rating, "hours_played" = :hours_played WHERE id = (SELECT id_statistics FROM users WHERE id = :id);
+        ');
+
+        $stmt->bindParam(':all_games', $s->getAllGames(),  PDO::PARAM_INT);
+        $stmt->bindParam(':average_rating', $updatedAverageRating, PDO::PARAM_INT);
+        $stmt->bindParam(':hours_played', $s->getHoursPlayed(), PDO::PARAM_INT);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+
+        $stmt->execute();
+
+        $stmt = $this->database->connect()->prepare('
             SELECT * FROM statistics WHERE id = (SELECT id_statistics FROM users WHERE id = :id)
         ');
 

@@ -1,44 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c860e711-a967-49d5-961d-4e13d6f3c792" name="Changes" comment="AdminController">
-      <change afterPath="$PROJECT_DIR$/Public/img/POE.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Public/img/amongus.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Public/img/assassin-s-creed-ii.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Public/img/farcry3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Public/img/fifa23.jfif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Public/img/gothicremake.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Public/img/grand-theft-auto.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Public/img/gtasa.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Public/img/h3-cover.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Public/img/hogwarts.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Public/img/lifsisstrange.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Public/img/mafia.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Public/img/me3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Public/img/portal2.jfif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Public/img/the-elder-scrolls-v-skyrim.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Public/img/tombraider.jfif" afterDir="false" />
+    <list default="true" id="c860e711-a967-49d5-961d-4e13d6f3c792" name="Changes" comment="final changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Public/css/mylist.css" beforeDir="false" afterPath="$PROJECT_DIR$/Public/css/mylist.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Public/css/settings.css" beforeDir="false" afterPath="$PROJECT_DIR$/Public/css/settings.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Public/css/statistics.css" beforeDir="false" afterPath="$PROJECT_DIR$/Public/css/statistics.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Public/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Public/css/users.css" beforeDir="false" afterPath="$PROJECT_DIR$/Public/css/users.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Public/js/add.js" beforeDir="false" afterPath="$PROJECT_DIR$/Public/js/add.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Public/js/addUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/Public/js/addUser.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Public/js/list.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Public/js/statistics.js" beforeDir="false" afterPath="$PROJECT_DIR$/Public/js/statistics.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/mylist.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/mylist.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/nav-phone.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/nav-phone.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/nav.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/nav.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/search.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/search.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/settings.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/settings.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/statistics.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/statistics.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/users.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/users.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/StatController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/StatController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/MylistController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/MylistController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/SecurityController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/UsersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/UsersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/UserPanel.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repository/GamesRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/GamesRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/repository/MylistRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/MylistRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/repository/StatRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/StatRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/UserRepository.php" afterDir="false" />
@@ -59,6 +30,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="finalBranch" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -71,7 +47,8 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Public/js" />
+    <property name="database.data.extractors.current.export.id" value="SQL Inserts" />
+    <property name="last_opened_file_path" value="$USER_HOME$/zz" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/Public/js/scripts.js" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -83,6 +60,7 @@
       <recent name="C:\Users\PC\Desktop\Projekt Games App\Project\GameBook\src\repository" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\PC\Desktop\Projekt Games App\Project\GameBook" />
       <recent name="C:\Users\PC\Desktop\Projekt Games App\Project\GameBook\Public\img" />
     </key>
   </component>
@@ -129,7 +107,9 @@
       <workItem from="1674740158198" duration="11619000" />
       <workItem from="1674827624268" duration="3821000" />
       <workItem from="1674994217766" duration="18200000" />
-      <workItem from="1675073244574" duration="26696000" />
+      <workItem from="1675073244574" duration="29054000" />
+      <workItem from="1675181554503" duration="7081000" />
+      <workItem from="1675272291794" duration="3874000" />
     </task>
     <task id="LOCAL-00001" summary="added User">
       <created>1668507390303</created>
@@ -201,7 +181,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675079483249</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="final changes">
+      <created>1675106330970</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1675106330970</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -229,6 +216,7 @@
     <MESSAGE value="settings, session" />
     <MESSAGE value="visual changes" />
     <MESSAGE value="AdminController" />
-    <option name="LAST_COMMIT_MESSAGE" value="AdminController" />
+    <MESSAGE value="final changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="final changes" />
   </component>
 </project>
