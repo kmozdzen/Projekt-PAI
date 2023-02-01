@@ -70,33 +70,6 @@ class MylistRepository extends Repository
             $idGames,
             $idUser
         ]);
-
-        $stmt = $this->database->connect()->prepare('
-            SELECT count(id) allgames, sum(rating) averagerating, sum(hours_played) hoursplayed FROM my_list WHERE id_user = :id;
-        ');
-        $stmt->bindParam(':id', $idUser, PDO::PARAM_INT);
-        $stmt->execute();
-        $stats = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-        $s = new Stats(0 ,0 , 0, 0);
-        foreach ($stats as $stat){
-            $s->setAllGames($stat['allgames']);
-            $s->setAverageRating($stat['averagerating']);
-            $s->setHoursPlayed($stat['hoursplayed']);
-        }
-
-        $updatedAverageRating= $s->getAverageRating() / $s->getAllGames();
-
-        $stmt = $this->database->connect()->prepare('
-            UPDATE statistics SET "all_games" = :all_games, "average_rating" = :average_rating, "hours_played" = :hours_played WHERE id = :idStats;
-        ');
-
-        $stmt->bindParam(':all_games', $s->getAllGames(),  PDO::PARAM_INT);
-        $stmt->bindParam(':average_rating', $updatedAverageRating, PDO::PARAM_INT);
-        $stmt->bindParam(':hours_played', $s->getHoursPlayed(), PDO::PARAM_INT);
-        $stmt->bindParam(':idStats', $idStats, PDO::PARAM_INT);
-
-        $stmt->execute();
     }
 
     public function getGames($id): array

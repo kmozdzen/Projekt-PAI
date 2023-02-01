@@ -26,7 +26,6 @@ class UserRepository extends Repository
             throw new Exception("User not found");
         }
 
-
         $u = new User(
             $user['email'],
             $user['password'],
@@ -218,6 +217,9 @@ class UserRepository extends Repository
         }
         if ($this->validate($user->getPassword())){
             $user->setPassword($oldUser->getPassword());
+        }
+        else {
+            $user->setPassword(password_hash($user->getPassword(), PASSWORD_BCRYPT));
         }
         if ($this->validate($user->getName())){
             $user->setName($oldUser->getName());
